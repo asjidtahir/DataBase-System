@@ -1,0 +1,863 @@
+
+Setting environment for using XAMPP for Windows.
+Asjid Tahir@AJJI c:\xampp
+# CREATE DATABASE P190085_ASJIDTAHIR
+'CREATE' is not recognized as an internal or external command,
+operable program or batch file.
+
+Asjid Tahir@AJJI c:\xampp
+# ;
+Asjid Tahir@AJJI c:\xampp
+# CREATE DATABASE P190085ASJIDTAHIR
+'CREATE' is not recognized as an internal or external command,
+operable program or batch file.
+
+Asjid Tahir@AJJI c:\xampp
+#
+Asjid Tahir@AJJI c:\xampp
+# MYSQL -U ROOT
+ERROR 1045 (28000): Access denied for user 'Asjid Tahir'@'localhost' (using password: NO)
+
+Asjid Tahir@AJJI c:\xampp
+# mysql -u root
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 9
+Server version: 10.4.22-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> SHOW DATABASES
+    -> ;
++--------------------+
+| Database           |
++--------------------+
+| 19p0085_asjidtahir |
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| test               |
++--------------------+
+6 rows in set (0.032 sec)
+
+MariaDB [(none)]> DROP DATABASE 19p0085_asjidtahir;
+Query OK, 7 rows affected (0.212 sec)
+
+MariaDB [(none)]> CREATE DATABASE 19P0085_ASJIDTAHIR;
+Query OK, 1 row affected (0.001 sec)
+
+MariaDB [(none)]> USE 19P0085_ASJIDTAHIR;
+Database changed
+MariaDB [19P0085_ASJIDTAHIR]> SOURCE C:\Users\ENVY\Downloads\Data_Base\LAB # 03
+ERROR: Failed to open file 'C:\Users\ENVY\Downloads\Data_Base\LAB # 03', error: 13
+MariaDB [19P0085_ASJIDTAHIR]> SOURCE C:\Users\ENVY\Downloads\Data_Base\LAB # 03/themepark.sql
+ERROR 1051 (42S02) at line 10 in file: 'C:\Users\ENVY\Downloads\Data_Base\LAB # 03\themepark.sql': Unknown table '19p0085_asjidtahir.sales_line'
+ERROR 1051 (42S02) at line 11 in file: 'C:\Users\ENVY\Downloads\Data_Base\LAB # 03\themepark.sql': Unknown table '19p0085_asjidtahir.sales'
+ERROR 1051 (42S02) at line 12 in file: 'C:\Users\ENVY\Downloads\Data_Base\LAB # 03\themepark.sql': Unknown table '19p0085_asjidtahir.hours'
+ERROR 1051 (42S02) at line 13 in file: 'C:\Users\ENVY\Downloads\Data_Base\LAB # 03\themepark.sql': Unknown table '19p0085_asjidtahir.attraction'
+ERROR 1051 (42S02) at line 14 in file: 'C:\Users\ENVY\Downloads\Data_Base\LAB # 03\themepark.sql': Unknown table '19p0085_asjidtahir.ticket'
+ERROR 1051 (42S02) at line 15 in file: 'C:\Users\ENVY\Downloads\Data_Base\LAB # 03\themepark.sql': Unknown table '19p0085_asjidtahir.employee'
+ERROR 1051 (42S02) at line 16 in file: 'C:\Users\ENVY\Downloads\Data_Base\LAB # 03\themepark.sql': Unknown table '19p0085_asjidtahir.themepark'
+Query OK, 0 rows affected (0.028 sec)
+
+Query OK, 0 rows affected (0.024 sec)
+
+Query OK, 0 rows affected (0.034 sec)
+
+Query OK, 0 rows affected (0.025 sec)
+
+Query OK, 0 rows affected, 1 warning (0.029 sec)
+
+Query OK, 0 rows affected (0.034 sec)
+
+Query OK, 0 rows affected, 1 warning (0.028 sec)
+
+Query OK, 0 rows affected (0.012 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 1 row affected (0.004 sec)
+
+Query OK, 1 row affected (0.002 sec)
+
+Query OK, 1 row affected (0.003 sec)
+
+Query OK, 1 row affected (0.002 sec)
+
+Query OK, 1 row affected (0.003 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.002 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.002 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.003 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.002 sec)
+
+Query OK, 1 row affected (0.002 sec)
+
+Query OK, 1 row affected (0.002 sec)
+
+Query OK, 1 row affected (0.002 sec)
+
+Query OK, 1 row affected (0.002 sec)
+
+Query OK, 1 row affected (0.002 sec)
+
+Query OK, 1 row affected (0.002 sec)
+
+Query OK, 1 row affected (0.003 sec)
+
+Query OK, 1 row affected (0.003 sec)
+
+Query OK, 1 row affected (0.002 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.002 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.002 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.002 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.002 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.002 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.002 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 0 rows affected (0.000 sec)
+
+MariaDB [19P0085_ASJIDTAHIR]> SELECT * FROM themepark
+    -> ;
++-----------+---------------+--------------+--------------+
+| PARK_CODE | PARK_NAME     | PARK_CITY    | PARK_COUNTRY |
++-----------+---------------+--------------+--------------+
+| FR1001    | FairyLand     | PARIS        | FR           |
+| NL1202    | Efling        | NOORD        | NL           |
+| SP4533    | AdventurePort | BARCELONA    | SP           |
+| SW2323    | Labyrinthe    | LAUSANNE     | SW           |
+| UK2622    | MiniLand      | WINDSOR      | UK           |
+| UK3452    | PleasureLand  | STOKE        | UK           |
+| ZA1342    | GoldTown      | JOHANNESBURG | ZA           |
++-----------+---------------+--------------+--------------+
+7 rows in set (0.000 sec)
+
+MariaDB [19P0085_ASJIDTAHIR]> sSHOW TABLES
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'sSHOW TABLES' at line 1
+MariaDB [19P0085_ASJIDTAHIR]> SHOW TABLES;
++------------------------------+
+| Tables_in_19p0085_asjidtahir |
++------------------------------+
+| attraction                   |
+| employee                     |
+| hours                        |
+| sales                        |
+| sales_line                   |
+| themepark                    |
+| ticket                       |
++------------------------------+
+7 rows in set (0.001 sec)
+
+MariaDB [19P0085_ASJIDTAHIR]> DESCRIBE THEMEPARK;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| PARK_CODE    | varchar(10) | NO   | PRI | NULL    |       |
+| PARK_NAME    | varchar(35) | NO   |     | NULL    |       |
+| PARK_CITY    | varchar(50) | YES  |     | NULL    |       |
+| PARK_COUNTRY | char(2)     | NO   |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+4 rows in set (0.015 sec)
+
+MariaDB [19P0085_ASJIDTAHIR]> SELECT PARK_CODE, TICKET_NO, TICKET_TYPE, ROUND
+    -> (TICKET_PRICE,1), TICKET_PRICE + ROUND((TICKET_PRICE
+    -> *0.1),2)
+    -> ;
+ERROR 1054 (42S22): Unknown column 'PARK_CODE' in 'field list'
+MariaDB [19P0085_ASJIDTAHIR]> SELECT PARK_CODE, TICKET_NO, TICKET_TYPE, ROUND
+    -> (TICKET_PRICE,1), TICKET_PRICE + ROUND((TICKET_PRICE
+    -> *0.1),2)
+    -> FROM TICKET;
++-----------+-----------+-------------+------------------------+---------------------------------------------+
+| PARK_CODE | TICKET_NO | TICKET_TYPE | ROUND
+(TICKET_PRICE,1) | TICKET_PRICE + ROUND((TICKET_PRICE
+*0.1),2) |
++-----------+-----------+-------------+------------------------+---------------------------------------------+
+| SP4533    |     11001 | Adult       |                   25.0 |                                       27.49 |
+| SP4533    |     11002 | Child       |                   15.0 |                                       16.49 |
+| SP4533    |     11003 | Senior      |                   11.0 |                                       12.09 |
+| FR1001    |     13001 | Child       |                   19.0 |                                       20.89 |
+| FR1001    |     13002 | Adult       |                   35.0 |                                       38.49 |
+| FR1001    |     13003 | Senior      |                   21.0 |                                       23.09 |
+| ZA1342    |     67832 | Child       |                   18.6 |                                       20.42 |
+| ZA1342    |     67833 | Adult       |                   28.7 |                                       31.54 |
+| ZA1342    |     67855 | Senior      |                   12.1 |                                       13.33 |
+| UK3452    |     88567 | Child       |                   22.5 |                                       24.75 |
+| UK3452    |     88568 | Adult       |                   42.1 |                                       46.31 |
+| UK3452    |     89720 | Senior      |                   11.0 |                                       12.09 |
++-----------+-----------+-------------+------------------------+---------------------------------------------+
+12 rows in set (0.001 sec)
+
+MariaDB [19P0085_ASJIDTAHIR]> SELECT PARK_CODE, TICKET_TYPE, TICKET_PRICE
+    -> FROM TICKET
+    -> WHERE TICKET_PRICE > 20;
++-----------+-------------+--------------+
+| PARK_CODE | TICKET_TYPE | TICKET_PRICE |
++-----------+-------------+--------------+
+| SP4533    | Adult       |        24.99 |
+| FR1001    | Adult       |        34.99 |
+| FR1001    | Senior      |        20.99 |
+| ZA1342    | Adult       |        28.67 |
+| UK3452    | Child       |        22.50 |
+| UK3452    | Adult       |        42.10 |
++-----------+-------------+--------------+
+6 rows in set (0.001 sec)
+
+MariaDB [19P0085_ASJIDTAHIR]> SELECT PARK_CODE, TICKET_TYPE, TICKET_PRICE
+    -> FROM TICKET
+    -> WHERE TICKET_PRICE < 30;
++-----------+-------------+--------------+
+| PARK_CODE | TICKET_TYPE | TICKET_PRICE |
++-----------+-------------+--------------+
+| SP4533    | Adult       |        24.99 |
+| SP4533    | Child       |        14.99 |
+| SP4533    | Senior      |        10.99 |
+| FR1001    | Child       |        18.99 |
+| FR1001    | Senior      |        20.99 |
+| ZA1342    | Child       |        18.56 |
+| ZA1342    | Adult       |        28.67 |
+| ZA1342    | Senior      |        12.12 |
+| UK3452    | Child       |        22.50 |
+| UK3452    | Senior      |        10.99 |
++-----------+-------------+--------------+
+10 rows in set (0.000 sec)
+
+MariaDB [19P0085_ASJIDTAHIR]> SELECT PARK_CODE, PARK_NAME, PARK_COUNTRY
+    -> FROM THEMEPARK
+    -> WHERE PARK_CODE < ‘UK2262’;
+    `> ;
+    `> SELECT PARK_CODE, PARK_NAME, PARK_COUNTRY
+    `> FROM THEMEPARK
+    `> WHERE PARK_CODE < ‘UK2262’
+    '> ;
+    '> ;
+    '> SELECT PARK_CODE, PARK_NAME, PARK_COUNTRY FROM THEMEPARK WHERE PARKCODE <'UK2262';
+    '> Bye
+
+Asjid Tahir@AJJI c:\xampp
+#
+Asjid Tahir@AJJI c:\xampp
+# mysql -u root
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 38
+Server version: 10.4.22-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> SELECT PARK_CODE, PARK_NAME, PARK_COUNTRY
+    -> FROM THEMEPARK
+    -> WHERE PARK_CODE < ‘UK2262’;
+    `> Bye
+
+Asjid Tahir@AJJI c:\xampp
+# mysql -u root
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 39
+Server version: 10.4.22-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> use 19P0085_ASJIDTAHIR
+Database changed
+MariaDB [19P0085_ASJIDTAHIR]> SELECT PARK_CODE, PARK_NAME, PARK_COUNTRY
+    -> FROM THEMEPARK
+    -> WHERE PARK_CODE<'UK2262';
++-----------+---------------+--------------+
+| PARK_CODE | PARK_NAME     | PARK_COUNTRY |
++-----------+---------------+--------------+
+| FR1001    | FairyLand     | FR           |
+| NL1202    | Efling        | NL           |
+| SP4533    | AdventurePort | SP           |
+| SW2323    | Labyrinthe    | SW           |
++-----------+---------------+--------------+
+4 rows in set (0.001 sec)
+
+MariaDB [19P0085_ASJIDTAHIR]> SELECT *
+    -> FROM TICKET
+    -> WHERE TICKET_PRICE BETWEEN 30.00 AND 50.00;
++-----------+--------------+-------------+-----------+
+| TICKET_NO | TICKET_PRICE | TICKET_TYPE | PARK_CODE |
++-----------+--------------+-------------+-----------+
+|     13002 |        34.99 | Adult       | FR1001    |
+|     88568 |        42.10 | Adult       | UK3452    |
++-----------+--------------+-------------+-----------+
+2 rows in set (0.000 sec)
+
+MariaDB [19P0085_ASJIDTAHIR]> SELECT EMP_NUM, ATTRACT_NO, HOUR_PER_ATTRACT
+    -> FROM HOURS
+    -> WHERE HOURS_PER_ATTRACT BETWEEN 5 AND 10;
+ERROR 1054 (42S22): Unknown column 'HOUR_PER_ATTRACT' in 'field list'
+MariaDB [19P0085_ASJIDTAHIR]> SELECT * FORM HOURS;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FORM HOURS' at line 1
+MariaDB [19P0085_ASJIDTAHIR]> SELECT * FROM HOURS;
++---------+------------+-------------------+-----------+-------------+
+| EMP_NUM | ATTRACT_NO | HOURS_PER_ATTRACT | HOUR_RATE | DATE_WORKED |
++---------+------------+-------------------+-----------+-------------+
+|     100 |      10034 |                 6 |      6.50 | 2007-05-18  |
+|     100 |      10034 |                 6 |      6.50 | 2007-05-20  |
+|     101 |      10034 |                 6 |      6.50 | 2007-05-18  |
+|     102 |      30012 |                 3 |      5.99 | 2007-05-23  |
+|     102 |      30044 |                 6 |      5.99 | 2007-05-21  |
+|     102 |      30044 |                 3 |      5.99 | 2007-05-22  |
+|     104 |      30011 |                 6 |      7.20 | 2007-05-21  |
+|     104 |      30012 |                 6 |      7.20 | 2007-05-22  |
+|     105 |      10078 |                 3 |      8.50 | 2007-05-18  |
+|     105 |      10098 |                 3 |      8.50 | 2007-05-18  |
+|     105 |      10098 |                 6 |      8.50 | 2007-05-19  |
++---------+------------+-------------------+-----------+-------------+
+11 rows in set (0.002 sec)
+
+MariaDB [19P0085_ASJIDTAHIR]> SELECT EMP_NUM, ATTRACT_NO, HOURS_PER_ATTRACT
+    -> FROM HOURS
+    -> WHERE HOURS_PER_ATTRACT BETWEEN 5 AND 10;
++---------+------------+-------------------+
+| EMP_NUM | ATTRACT_NO | HOURS_PER_ATTRACT |
++---------+------------+-------------------+
+|     100 |      10034 |                 6 |
+|     100 |      10034 |                 6 |
+|     101 |      10034 |                 6 |
+|     102 |      30044 |                 6 |
+|     104 |      30011 |                 6 |
+|     104 |      30012 |                 6 |
+|     105 |      10098 |                 6 |
++---------+------------+-------------------+
+7 rows in set (0.000 sec)
+
+MariaDB [19P0085_ASJIDTAHIR]> SELECT *
+    -> FROM SALES_LINE
+    -> WHERE TRANSACTION_NO IN (12781, 67593);
++----------------+---------+-----------+----------+------------+
+| TRANSACTION_NO | LINE_NO | TICKET_NO | LINE_QTY | LINE_PRICE |
++----------------+---------+-----------+----------+------------+
+|          12781 |       1 |     13002 |        2 |      69.98 |
+|          12781 |       2 |     13001 |        1 |      14.99 |
+|          67593 |       1 |     67833 |        2 |      57.34 |
+|          67593 |       2 |     67832 |        2 |      37.12 |
++----------------+---------+-----------+----------+------------+
+4 rows in set (0.000 sec)
+
+MariaDB [19P0085_ASJIDTAHIR]> SELECT * FROM TICKET
+    -> WHERE TICKET_TYPE IN <'Child','Senior'>;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '<'Child','Senior'>' at line 2
+MariaDB [19P0085_ASJIDTAHIR]> SELECT * FROM TICKET
+    -> WHERE TICKET_TYPE IN <'Child','Senior'>
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '<'Child','Senior'>' at line 2
+MariaDB [19P0085_ASJIDTAHIR]> SELECT EMP_LNAME, EMP_FNAME, EMP_NUM
+    -> FROM EMPLOYEE
+    -> WHERE EMP_FNAME LIKE ‘A%’;
+    `> ;
+    `> SELECT EMP_LNAME, EMP_FNAME, EMP_NUM
+    `> FROM EMPLOYEE
+    `> WHERE EMP_FNAME LIKE ‘A%’;^ZBye
+
+Asjid Tahir@AJJI c:\xampp
+# mysql -u root
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 40
+Server version: 10.4.22-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> USE 19P0085_ASJIDTAHIR
+Database changed
+MariaDB [19P0085_ASJIDTAHIR]> SELECT EMP_LNAME, EMP_FNAME, EMP_NUM
+    -> FROM EMPLOYEE
+    -> WHERE EMP_FNAME LIKE ‘A%’;
+    `> SELECT EMP_LNAME, EMP_FNAME, EMP_NUM
+    `> FROM EMPLOYEE
+    `>
+    `> WHERE EMP_FNAME LIKE ‘A%’;
+    '> Bye
+
+Asjid Tahir@AJJI c:\xampp
+# mysql -u root
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 41
+Server version: 10.4.22-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> USE 19P0085_ASJIDTAHIR;
+Database changed
+MariaDB [19P0085_ASJIDTAHIR]> SELECT EMP_LNAME, EMP_FNAME, EMP_NUM
+    -> FROM EMPLOYEE
+    -> WHERE EMP_FNAME LIKE ‘A%’;
+    `> WHERE EMP_FNAME LIKE ‘A%’;
+    '> Bye
+
+Asjid Tahir@AJJI c:\xampp
+# mysql -u root
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 44
+Server version: 10.4.22-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> USE 19P0085_ASJIDTAHIR;
+Database changed
+MariaDB [19P0085_ASJIDTAHIR]> SELECT * FROM ATTRACTION;
++------------+-----------------+-------------+------------------+-----------+
+| ATTRACT_NO | ATTRACT_NAME    | ATTRACT_AGE | ATTRACT_CAPACITY | PARK_CODE |
++------------+-----------------+-------------+------------------+-----------+
+|      10034 | ThunderCoaster  |          11 |               34 | FR1001    |
+|      10056 | SpinningTeacups |           4 |               62 | FR1001    |
+|      10067 | FlightToStars   |          11 |               24 | FR1001    |
+|      10078 | Ant-Trap        |          23 |               30 | FR1001    |
+|      10082 | NULL            |          10 |               40 | ZA1342    |
+|      10098 | Carnival        |           3 |              120 | FR1001    |
+|      20056 | 3D-Lego_Show    |           3 |              200 | UK3452    |
+|      30011 | BlackHole2      |          12 |               34 | UK3452    |
+|      30012 | Pirates         |          10 |               42 | UK3452    |
+|      30044 | UnderSeaWord    |           4 |               80 | UK3452    |
+|      98764 | GoldRush        |           5 |               80 | ZA1342    |
++------------+-----------------+-------------+------------------+-----------+
+11 rows in set (0.001 sec)
+
+MariaDB [19P0085_ASJIDTAHIR]> SELECT *
+    -> FROM ATTRACTION
+    -> WHERE ATTRACT_NAME IS NULL;
++------------+--------------+-------------+------------------+-----------+
+| ATTRACT_NO | ATTRACT_NAME | ATTRACT_AGE | ATTRACT_CAPACITY | PARK_CODE |
++------------+--------------+-------------+------------------+-----------+
+|      10082 | NULL         |          10 |               40 | ZA1342    |
++------------+--------------+-------------+------------------+-----------+
+1 row in set (0.000 sec)
+
+MariaDB [19P0085_ASJIDTAHIR]> SELECT EMP_NUM, ATTRACT_NO
+    -> FROM HOURS
+    -> WHERE HOURS_PER_ATTRACT > 3
+    -> AND DATE_WORKED > '2007-05-18';
++---------+------------+
+| EMP_NUM | ATTRACT_NO |
++---------+------------+
+|     100 |      10034 |
+|     102 |      30044 |
+|     104 |      30011 |
+|     104 |      30012 |
+|     105 |      10098 |
++---------+------------+
+5 rows in set (0.000 sec)
+
+MariaDB [19P0085_ASJIDTAHIR]> SELECT * FROM THEMEPARK;
++-----------+---------------+--------------+--------------+
+| PARK_CODE | PARK_NAME     | PARK_CITY    | PARK_COUNTRY |
++-----------+---------------+--------------+--------------+
+| FR1001    | FairyLand     | PARIS        | FR           |
+| NL1202    | Efling        | NOORD        | NL           |
+| SP4533    | AdventurePort | BARCELONA    | SP           |
+| SW2323    | Labyrinthe    | LAUSANNE     | SW           |
+| UK2622    | MiniLand      | WINDSOR      | UK           |
+| UK3452    | PleasureLand  | STOKE        | UK           |
+| ZA1342    | GoldTown      | JOHANNESBURG | ZA           |
++-----------+---------------+--------------+--------------+
+7 rows in set (0.001 sec)
+
+MariaDB [19P0085_ASJIDTAHIR]> SELECT * FROM THEMEPARK WHERE PARK_COUNTRY!="UK";
++-----------+---------------+--------------+--------------+
+| PARK_CODE | PARK_NAME     | PARK_CITY    | PARK_COUNTRY |
++-----------+---------------+--------------+--------------+
+| FR1001    | FairyLand     | PARIS        | FR           |
+| NL1202    | Efling        | NOORD        | NL           |
+| SP4533    | AdventurePort | BARCELONA    | SP           |
+| SW2323    | Labyrinthe    | LAUSANNE     | SW           |
+| ZA1342    | GoldTown      | JOHANNESBURG | ZA           |
++-----------+---------------+--------------+--------------+
+5 rows in set (0.000 sec)
+
+MariaDB [19P0085_ASJIDTAHIR]> SELECT * FROM SALES;
++----------------+-----------+------------+
+| TRANSACTION_NO | PARK_CODE | SALE_DATE  |
++----------------+-----------+------------+
+|          12781 | FR1001    | 2007-05-18 |
+|          12782 | FR1001    | 2007-05-18 |
+|          12783 | FR1001    | 2007-05-18 |
+|          12784 | FR1001    | 2007-05-18 |
+|          12785 | FR1001    | 2007-05-18 |
+|          12786 | FR1001    | 2007-05-18 |
+|          34534 | UK3452    | 2007-05-18 |
+|          34535 | UK3452    | 2007-05-18 |
+|          34536 | UK3452    | 2007-05-18 |
+|          34537 | UK3452    | 2007-05-18 |
+|          34538 | UK3452    | 2007-05-18 |
+|          34539 | UK3452    | 2007-05-18 |
+|          34540 | UK3452    | 2007-05-18 |
+|          34541 | UK3452    | 2007-05-18 |
+|          67589 | ZA1342    | 2007-05-18 |
+|          67590 | ZA1342    | 2007-05-18 |
+|          67591 | ZA1342    | 2007-05-18 |
+|          67592 | ZA1342    | 2007-05-18 |
+|          67593 | ZA1342    | 2007-05-18 |
++----------------+-----------+------------+
+19 rows in set (0.001 sec)
+
+MariaDB [19P0085_ASJIDTAHIR]> SELECT * FROM SALES WHERE SALE_DATE="2007-05-18";
++----------------+-----------+------------+
+| TRANSACTION_NO | PARK_CODE | SALE_DATE  |
++----------------+-----------+------------+
+|          12781 | FR1001    | 2007-05-18 |
+|          12782 | FR1001    | 2007-05-18 |
+|          12783 | FR1001    | 2007-05-18 |
+|          12784 | FR1001    | 2007-05-18 |
+|          12785 | FR1001    | 2007-05-18 |
+|          12786 | FR1001    | 2007-05-18 |
+|          34534 | UK3452    | 2007-05-18 |
+|          34535 | UK3452    | 2007-05-18 |
+|          34536 | UK3452    | 2007-05-18 |
+|          34537 | UK3452    | 2007-05-18 |
+|          34538 | UK3452    | 2007-05-18 |
+|          34539 | UK3452    | 2007-05-18 |
+|          34540 | UK3452    | 2007-05-18 |
+|          34541 | UK3452    | 2007-05-18 |
+|          67589 | ZA1342    | 2007-05-18 |
+|          67590 | ZA1342    | 2007-05-18 |
+|          67591 | ZA1342    | 2007-05-18 |
+|          67592 | ZA1342    | 2007-05-18 |
+|          67593 | ZA1342    | 2007-05-18 |
++----------------+-----------+------------+
+19 rows in set (0.000 sec)
+
+MariaDB [19P0085_ASJIDTAHIR]> SELECT * FROM TICKET;
++-----------+--------------+-------------+-----------+
+| TICKET_NO | TICKET_PRICE | TICKET_TYPE | PARK_CODE |
++-----------+--------------+-------------+-----------+
+|     11001 |        24.99 | Adult       | SP4533    |
+|     11002 |        14.99 | Child       | SP4533    |
+|     11003 |        10.99 | Senior      | SP4533    |
+|     13001 |        18.99 | Child       | FR1001    |
+|     13002 |        34.99 | Adult       | FR1001    |
+|     13003 |        20.99 | Senior      | FR1001    |
+|     67832 |        18.56 | Child       | ZA1342    |
+|     67833 |        28.67 | Adult       | ZA1342    |
+|     67855 |        12.12 | Senior      | ZA1342    |
+|     88567 |        22.50 | Child       | UK3452    |
+|     88568 |        42.10 | Adult       | UK3452    |
+|     89720 |        10.99 | Senior      | UK3452    |
++-----------+--------------+-------------+-----------+
+12 rows in set (0.001 sec)
+
+MariaDB [19P0085_ASJIDTAHIR]> SELECT * FROM TICKET WHERE TICKET_PRICE BETWEEN 20 AND 30 ;
++-----------+--------------+-------------+-----------+
+| TICKET_NO | TICKET_PRICE | TICKET_TYPE | PARK_CODE |
++-----------+--------------+-------------+-----------+
+|     11001 |        24.99 | Adult       | SP4533    |
+|     13003 |        20.99 | Senior      | FR1001    |
+|     67833 |        28.67 | Adult       | ZA1342    |
+|     88567 |        22.50 | Child       | UK3452    |
++-----------+--------------+-------------+-----------+
+4 rows in set (0.001 sec)
+
+MariaDB [19P0085_ASJIDTAHIR]> SELECT * FROM ATTRACTION;
++------------+-----------------+-------------+------------------+-----------+
+| ATTRACT_NO | ATTRACT_NAME    | ATTRACT_AGE | ATTRACT_CAPACITY | PARK_CODE |
++------------+-----------------+-------------+------------------+-----------+
+|      10034 | ThunderCoaster  |          11 |               34 | FR1001    |
+|      10056 | SpinningTeacups |           4 |               62 | FR1001    |
+|      10067 | FlightToStars   |          11 |               24 | FR1001    |
+|      10078 | Ant-Trap        |          23 |               30 | FR1001    |
+|      10082 | NULL            |          10 |               40 | ZA1342    |
+|      10098 | Carnival        |           3 |              120 | FR1001    |
+|      20056 | 3D-Lego_Show    |           3 |              200 | UK3452    |
+|      30011 | BlackHole2      |          12 |               34 | UK3452    |
+|      30012 | Pirates         |          10 |               42 | UK3452    |
+|      30044 | UnderSeaWord    |           4 |               80 | UK3452    |
+|      98764 | GoldRush        |           5 |               80 | ZA1342    |
++------------+-----------------+-------------+------------------+-----------+
+11 rows in set (0.001 sec)
+
+MariaDB [19P0085_ASJIDTAHIR]> SELECT * FROM ATTRACTION WHERE ATTRACT_CAPACITY>60 AND PARK_CODE='FR1001';
++------------+-----------------+-------------+------------------+-----------+
+| ATTRACT_NO | ATTRACT_NAME    | ATTRACT_AGE | ATTRACT_CAPACITY | PARK_CODE |
++------------+-----------------+-------------+------------------+-----------+
+|      10056 | SpinningTeacups |           4 |               62 | FR1001    |
+|      10098 | Carnival        |           3 |              120 | FR1001    |
++------------+-----------------+-------------+------------------+-----------+
+2 rows in set (0.001 sec)
+
+MariaDB [19P0085_ASJIDTAHIR]> SELECT ATTRACT_NO, ROUND(HOUR_RATE,1),ROUND(HOUR_RATE + (HOUR_RATE * 0.2),1)
+    -> INCREMENT FROM HOURS;
++------------+--------------------+-----------+
+| ATTRACT_NO | ROUND(HOUR_RATE,1) | INCREMENT |
++------------+--------------------+-----------+
+|      10034 |                6.5 |       7.8 |
+|      10034 |                6.5 |       7.8 |
+|      10034 |                6.5 |       7.8 |
+|      30012 |                6.0 |       7.2 |
+|      30044 |                6.0 |       7.2 |
+|      30044 |                6.0 |       7.2 |
+|      30011 |                7.2 |       8.6 |
+|      30012 |                7.2 |       8.6 |
+|      10078 |                8.5 |      10.2 |
+|      10098 |                8.5 |      10.2 |
+|      10098 |                8.5 |      10.2 |
++------------+--------------------+-----------+
+11 rows in set (0.001 sec)
+
+MariaDB [19P0085_ASJIDTAHIR]> SELECT * FROM HOURS GROUP BY EMP_NUM;
++---------+------------+-------------------+-----------+-------------+
+| EMP_NUM | ATTRACT_NO | HOURS_PER_ATTRACT | HOUR_RATE | DATE_WORKED |
++---------+------------+-------------------+-----------+-------------+
+|     100 |      10034 |                 6 |      6.50 | 2007-05-18  |
+|     101 |      10034 |                 6 |      6.50 | 2007-05-18  |
+|     102 |      30012 |                 3 |      5.99 | 2007-05-23  |
+|     104 |      30011 |                 6 |      7.20 | 2007-05-21  |
+|     105 |      10078 |                 3 |      8.50 | 2007-05-18  |
++---------+------------+-------------------+-----------+-------------+
+5 rows in set (0.001 sec)
+
+MariaDB [19P0085_ASJIDTAHIR]> SELECT * FROM SALES
+    -> ORDER BY SALE_DATE DESC;
++----------------+-----------+------------+
+| TRANSACTION_NO | PARK_CODE | SALE_DATE  |
++----------------+-----------+------------+
+|          12781 | FR1001    | 2007-05-18 |
+|          67592 | ZA1342    | 2007-05-18 |
+|          67591 | ZA1342    | 2007-05-18 |
+|          67590 | ZA1342    | 2007-05-18 |
+|          67589 | ZA1342    | 2007-05-18 |
+|          34541 | UK3452    | 2007-05-18 |
+|          34540 | UK3452    | 2007-05-18 |
+|          34539 | UK3452    | 2007-05-18 |
+|          34538 | UK3452    | 2007-05-18 |
+|          34537 | UK3452    | 2007-05-18 |
+|          34536 | UK3452    | 2007-05-18 |
+|          34535 | UK3452    | 2007-05-18 |
+|          34534 | UK3452    | 2007-05-18 |
+|          12786 | FR1001    | 2007-05-18 |
+|          12785 | FR1001    | 2007-05-18 |
+|          12784 | FR1001    | 2007-05-18 |
+|          12783 | FR1001    | 2007-05-18 |
+|          12782 | FR1001    | 2007-05-18 |
+|          67593 | ZA1342    | 2007-05-18 |
++----------------+-----------+------------+
+19 rows in set (0.000 sec)
+
+MariaDB [19P0085_ASJIDTAHIR]> SELECT * FROM SALES_LINE
+    -> ;
++----------------+---------+-----------+----------+------------+
+| TRANSACTION_NO | LINE_NO | TICKET_NO | LINE_QTY | LINE_PRICE |
++----------------+---------+-----------+----------+------------+
+|          12781 |       1 |     13002 |        2 |      69.98 |
+|          12781 |       2 |     13001 |        1 |      14.99 |
+|          12782 |       1 |     13002 |        2 |      69.98 |
+|          12783 |       1 |     13003 |        2 |      41.98 |
+|          12784 |       2 |     13001 |        1 |      14.99 |
+|          12785 |       1 |     13001 |        1 |      14.99 |
+|          12785 |       2 |     13002 |        1 |      34.99 |
+|          12785 |       3 |     13002 |        4 |     139.96 |
+|          34534 |       1 |     88568 |        4 |     168.40 |
+|          34534 |       2 |     88567 |        1 |      22.50 |
+|          34534 |       3 |     89720 |        2 |      21.98 |
+|          34535 |       1 |     88568 |        2 |      84.20 |
+|          34536 |       1 |     89720 |        2 |      21.98 |
+|          34537 |       1 |     88568 |        2 |      84.20 |
+|          34537 |       2 |     88567 |        1 |      22.50 |
+|          34538 |       1 |     89720 |        2 |      21.98 |
+|          34539 |       1 |     89720 |        2 |      21.98 |
+|          34539 |       2 |     88568 |        2 |      84.20 |
+|          34540 |       1 |     88568 |        4 |     168.40 |
+|          34540 |       2 |     88567 |        1 |      22.50 |
+|          34540 |       3 |     89720 |        2 |      21.98 |
+|          34541 |       1 |     88568 |        2 |      84.20 |
+|          67589 |       1 |     67833 |        2 |      57.34 |
+|          67589 |       2 |     67832 |        2 |      37.12 |
+|          67590 |       1 |     67833 |        2 |      57.34 |
+|          67590 |       2 |     67832 |        2 |      37.12 |
+|          67591 |       1 |     67832 |        1 |      18.56 |
+|          67591 |       2 |     67855 |        1 |      12.12 |
+|          67592 |       1 |     67833 |        4 |     114.68 |
+|          67593 |       1 |     67833 |        2 |      57.34 |
+|          67593 |       2 |     67832 |        2 |      37.12 |
++----------------+---------+-----------+----------+------------+
+31 rows in set (0.000 sec)
+
+MariaDB [19P0085_ASJIDTAHIR]> SELECT TRANSACTION_NO, LINE_PRICE FROM SALES_LINE WHERE LINE_PRICE > 50;
++----------------+------------+
+| TRANSACTION_NO | LINE_PRICE |
++----------------+------------+
+|          12781 |      69.98 |
+|          12782 |      69.98 |
+|          12785 |     139.96 |
+|          34534 |     168.40 |
+|          34535 |      84.20 |
+|          34537 |      84.20 |
+|          34539 |      84.20 |
+|          34540 |     168.40 |
+|          34541 |      84.20 |
+|          67589 |      57.34 |
+|          67590 |      57.34 |
+|          67592 |     114.68 |
+|          67593 |      57.34 |
++----------------+------------+
+13 rows in set (0.000 sec)
+
+MariaDB [19P0085_ASJIDTAHIR]>
