@@ -1,0 +1,28 @@
+
+Setting environment for using XAMPP for Windows.
+Asjid Tahir@AJJI c:\xampp
+# mysql -u root
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 8
+Server version: 10.4.22-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> CREATE DATABASE ASJIDTAHIR;
+Query OK, 1 row affected (0.002 sec)
+
+MariaDB [(none)]> USE ASJIDTAHIR
+Database changed
+MariaDB [ASJIDTAHIR]> CREATE TABLE STUDENT(
+    -> ROLL_NO VARCHAR(50) PRIMARY KEY,
+    -> NAME VARCHAR(50),
+    -> DOB DATE
+    -> );
+Query OK, 0 rows affected (0.031 sec)
+
+MariaDB [ASJIDTAHIR]> SELECT * FROM STUDENT;
+Empty set (0.048 sec)
+
+MariaDB [ASJIDTAHIR]>
