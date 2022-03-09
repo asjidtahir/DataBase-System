@@ -1,0 +1,14 @@
+Data Send Methods:
+
+-Get
+-Post
+
+
+Get is not better because while using get it's not secure it shows the information in URL and it has data limitation.
+But it is fast than post.
+(Not used for Confidential information).
+
+Post:
+
+Post is better than get beacuse it has large data limit and also give the security.
+
