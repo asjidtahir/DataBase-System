@@ -1,0 +1,42 @@
+Group by:
+
+Having is used for filtration.It is based upon the departments.
+i.e CS & EE & SE.
+-----------------------------------------------------------------------
+
+iNNER JOIN:
+GIVES YOU THE COMMON ELEMENT FROM THE COLUMNS.
+FR1001
+FR1001
+FR1001
+LR4002
+LR4002
+
+NOTE:
+
+iNNER JOIN AND NATURAL JOINS ARE THE SAME HAVING SAME FUNCTIONS.
+--------------------------------------------------------------------------
+
+
+lEFT JOiN:
+
+INTERSECTION AND LEFT DATA DISPLAY.
+AND WIRTE THE NULL TO THE VALUES OF RIGHT COULUMN.
+
+----------------------------------------------------------------------------
+
+
+CROSS JOIN:
+
+CROSS JOIN USED FOR CROSS PRODUCT.
+USE IN RESTAURANTS FOR ORDERING PURPOSE.
+i.e
+biryani       coke
+              water
+              soda
+              chai
+-------------------------------------------------------------------------------
+
+
+ER DIAGRAM:
+Objects identify and Entity.
