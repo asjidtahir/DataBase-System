@@ -1,0 +1,222 @@
+
+Setting environment for using XAMPP for Windows.
+Asjid Tahir@AJJI c:\xampp
+# mysql -u root
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 8
+Server version: 10.4.22-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> show databases
+    -> ;
++--------------------+
+| Database           |
++--------------------+
+| 19p0085_asjidtahir |
+| asjidtahir         |
+| form_registration  |
+| information_schema |
+| mysql              |
+| organization       |
+| performance_schema |
+| phpmyadmin         |
+| test               |
++--------------------+
+9 rows in set (0.036 sec)
+
+MariaDB [(none)]> use 19p0085_asjidtahir;
+Database changed
+MariaDB [19p0085_asjidtahir]> SELECT * FROM THEMEPARK;
++-----------+---------------+--------------+--------------+
+| PARK_CODE | PARK_NAME     | PARK_CITY    | PARK_COUNTRY |
++-----------+---------------+--------------+--------------+
+| dgsgd     | dgfsdg        | dgfsdgdfgdgf | z            |
+| FR1001    | FairyLand     | PARIS        | FR           |
+| NL1202    | Efling        | NOORD        | NL           |
+| SP4533    | AdventurePort | BARCELONA    | SP           |
+| SW2323    | Labyrinthe    | LAUSANNE     | SW           |
+| UK2622    | MiniLand      | WINDSOR      | UK           |
+| UK3452    | PleasureLand  | STOKE        | UK           |
+| ZA1342    | GoldTown      | JOHANNESBURG | ZA           |
++-----------+---------------+--------------+--------------+
+8 rows in set (0.064 sec)
+
+MariaDB [19p0085_asjidtahir]> SELECT TICKET_NO, TICKET_TYPE, TICKET_PRICE
+    -> FROM TICKET
+    -> WHERE TICKET_PRICE >= (SELECT AVG(TICKET_PRICE) FROM TICKET);
++-----------+-------------+--------------+
+| TICKET_NO | TICKET_TYPE | TICKET_PRICE |
++-----------+-------------+--------------+
+|     11001 | Adult       |        24.99 |
+|     13002 | Adult       |        34.99 |
+|     67833 | Adult       |        28.67 |
+|     88567 | Child       |        22.50 |
+|     88568 | Adult       |        42.10 |
++-----------+-------------+--------------+
+5 rows in set (0.020 sec)
+
+MariaDB [19p0085_asjidtahir]> SELECT AVG(TICKET_PRICE) FROM TICKET;
++-------------------+
+| AVG(TICKET_PRICE) |
++-------------------+
+|         21.740000 |
++-------------------+
+1 row in set (0.000 sec)
+
+MariaDB [19p0085_asjidtahir]> SELECT DISTINCT EMP_NUM, EMP_LNAME, EMP_FNAME, PARK_NAME
+    -> FROM EMPLOYEE NATURAL JOIN HOURS NATURAL JOIN
+    -> ATTRACTION NATURAL JOIN THEMEPARK
+    -> WHERE PARK_CODE IN (SELECT THEMEPARK.PARK_CODE FROM
+    -> THEMEPARK WHERE PARK_NAME LIKE ‘%Fairy%’);
+    `> ;
+    `> ;
+    `> SELECT DISTINCT EMP_NUM, EMP_LNAME, EMP_FNAME, PARK_NAME
+    `> FROM EMPLOYEE NATURAL JOIN HOURS NATURAL JOIN
+    `> ATTRACTION NATURAL JOIN THEMEPARK
+    `> WHERE PARK_CODE IN (SELECT THEMEPARK.PARK_CODE FROM
+    `> THEMEPARK WHERE PARK_NAME LIKE ‘%Fairy%’);
+    '> SELECT * FROM THEMEPARK;
+    '> THEMEPARK WHERE PARK_NAME LIKE ‘%Fairy%’);THEMEPARK WHERE PARK_NAME LIKE ‘%Fairy%’Bye
+
+Asjid Tahir@AJJI c:\xampp
+#
+Asjid Tahir@AJJI c:\xampp
+# mysql -u root
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 9
+Server version: 10.4.22-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> use 19p0085_asjidtahir;
+Database changed
+MariaDB [19p0085_asjidtahir]> SELECT PARK_CODE, SUM(LINE_QTY)
+    -> FROM SALES_LINE NATURAL JOIN TICKET
+    -> GROUP BY PARK_CODE
+    -> HAVING SUM(LINE_QTY) > (SELECT AVG(LINE_QTY) FROM SALES_LINE);
++-----------+---------------+
+| PARK_CODE | SUM(LINE_QTY) |
++-----------+---------------+
+| FR1001    |            14 |
+| UK3452    |            29 |
+| ZA1342    |            18 |
++-----------+---------------+
+3 rows in set (0.017 sec)
+
+MariaDB [19p0085_asjidtahir]> SELECT SUBJECT, COUNT(*) FROM SUBJECT_SELECTION GROUP BY SUBJECT;
+ERROR 1146 (42S02): Table '19p0085_asjidtahir.subject_selection' doesn't exist
+MariaDB [19p0085_asjidtahir]> SELECT TICKET_NO, PARK_CODE, TICKET_PRICE
+    -> FROM TICKET
+    -> WHERE TICKET_PRICE > ALL (SELECT TICKET_PRICE FROM TICKET
+    -> WHERE TICKET_TYPE = 'CHILD');
++-----------+-----------+--------------+
+| TICKET_NO | PARK_CODE | TICKET_PRICE |
++-----------+-----------+--------------+
+|     11001 | SP4533    |        24.99 |
+|     13002 | FR1001    |        34.99 |
+|     67833 | ZA1342    |        28.67 |
+|     88568 | UK3452    |        42.10 |
++-----------+-----------+--------------+
+4 rows in set (0.002 sec)
+
+MariaDB [19p0085_asjidtahir]> SELECT TICKET_NO, TICKET_PRICE,
+    -> (SELECT AVG(TICKET_PRICE) FROM TICKET) AS AVGPRICE,
+    -> TICKET_PRICE - (SELECT AVG(TICKET_PRICE) FROM TICKET) AS DIFF
+    -> FROM TICKET;
++-----------+--------------+-----------+------------+
+| TICKET_NO | TICKET_PRICE | AVGPRICE  | DIFF       |
++-----------+--------------+-----------+------------+
+|     11001 |        24.99 | 21.740000 |   3.250000 |
+|     11002 |        14.99 | 21.740000 |  -6.750000 |
+|     11003 |        10.99 | 21.740000 | -10.750000 |
+|     13001 |        18.99 | 21.740000 |  -2.750000 |
+|     13002 |        34.99 | 21.740000 |  13.250000 |
+|     13003 |        20.99 | 21.740000 |  -0.750000 |
+|     67832 |        18.56 | 21.740000 |  -3.180000 |
+|     67833 |        28.67 | 21.740000 |   6.930000 |
+|     67855 |        12.12 | 21.740000 |  -9.620000 |
+|     88567 |        22.50 | 21.740000 |   0.760000 |
+|     88568 |        42.10 | 21.740000 |  20.360000 |
+|     89720 |        10.99 | 21.740000 | -10.750000 |
++-----------+--------------+-----------+------------+
+12 rows in set (0.004 sec)
+
+MariaDB [19p0085_asjidtahir]> SELECT TRANSACTION_NO, LINE_NO, LINE_QTY, LINE_PRICE
+    -> FROM SALES_LINE SL
+    -> WHERE SL.LINE_QTY > (SELECT AVG(LINE_QTY)
+    -> FROM SALES_LINE SA
+    -> WHERE SA. TRANSACTION_NO = SL. TRANSACTION_NO);
++----------------+---------+----------+------------+
+| TRANSACTION_NO | LINE_NO | LINE_QTY | LINE_PRICE |
++----------------+---------+----------+------------+
+|          12781 |       1 |        2 |      69.98 |
+|          12785 |       3 |        4 |     139.96 |
+|          34534 |       1 |        4 |     168.40 |
+|          34537 |       1 |        2 |      84.20 |
+|          34540 |       1 |        4 |     168.40 |
++----------------+---------+----------+------------+
+5 rows in set (0.001 sec)
+
+MariaDB [19p0085_asjidtahir]> SELECT DISTINCT EMP_FNAME, EMP_LNAME FROM EMPLOYEE NATURAL JOIN HOURS WHERE HOUR_RATE > (SELECT AVG(HOUR_RATE) FROM HOURS);
++-----------+-----------+
+| EMP_FNAME | EMP_LNAME |
++-----------+-----------+
+| Enrica    | Denver    |
+| Mirrelle  | Namowa    |
++-----------+-----------+
+2 rows in set (0.022 sec)
+
+MariaDB [19p0085_asjidtahir]> SELECT EMP_FNAME,EMP_LNAME,DATE_WORKED,(SELECT AVG(HOURS_PER_ATTRACT) FROM HOURS) AS AVERAGE, HOURS_PER_ATTRACT - (SELECT AVG(HOURS_PER_ATTRACT) FROM HOURS) AS DIFFERENCE FROM EMPLOYEE NATURAL JOIN HOURS;
++-----------+------------+-------------+---------+------------+
+| EMP_FNAME | EMP_LNAME  | DATE_WORKED | AVERAGE | DIFFERENCE |
++-----------+------------+-------------+---------+------------+
+| Emma      | Calderdale | 2007-05-18  |  4.9091 |     1.0909 |
+| Emma      | Calderdale | 2007-05-20  |  4.9091 |     1.0909 |
+| Marshel   | Ricardo    | 2007-05-18  |  4.9091 |     1.0909 |
+| Arif      | Arshad     | 2007-05-23  |  4.9091 |    -1.9091 |
+| Arif      | Arshad     | 2007-05-21  |  4.9091 |     1.0909 |
+| Arif      | Arshad     | 2007-05-22  |  4.9091 |    -1.9091 |
+| Enrica    | Denver     | 2007-05-21  |  4.9091 |     1.0909 |
+| Enrica    | Denver     | 2007-05-22  |  4.9091 |     1.0909 |
+| Mirrelle  | Namowa     | 2007-05-18  |  4.9091 |    -1.9091 |
+| Mirrelle  | Namowa     | 2007-05-18  |  4.9091 |    -1.9091 |
+| Mirrelle  | Namowa     | 2007-05-19  |  4.9091 |     1.0909 |
++-----------+------------+-------------+---------+------------+
+11 rows in set (0.003 sec)
+
+MariaDB [19p0085_asjidtahir]> --EXERCISE NO 3:
+MariaDB [19p0085_asjidtahir]> --EXERCISE NO 3:
+MariaDB [19p0085_asjidtahir]> SELECT ATTRACT_CAPACITY FROM ATTRACTION WHERE ATTRACT_CAPACITY <= (SELECT AVG(ATTRACT_CAPACITY) FROM ATTRACTION);
++------------------+
+| ATTRACT_CAPACITY |
++------------------+
+|               34 |
+|               62 |
+|               24 |
+|               30 |
+|               40 |
+|               34 |
+|               42 |
++------------------+
+7 rows in set (0.012 sec)
+
+MariaDB [19p0085_asjidtahir]> SELECT ATTRACT_CAPACITY FROM ATTRACTION WHERE ATTRACT_CAPACITY <= (SELECT AVG(ATTRACT_CAPACITY) FROM ATTRACTION);
++------------------+
+| ATTRACT_CAPACITY |
++------------------+
+|               34 |
+|               62 |
+|               24 |
+|               30 |
+|               40 |
+|               34 |
+|               42 |
++------------------+
+7 rows in set (0.000 sec)
+
+MariaDB [19p0085_asjidtahir]>
