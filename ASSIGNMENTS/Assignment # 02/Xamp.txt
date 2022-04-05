@@ -1,0 +1,199 @@
+
+Setting environment for using XAMPP for Windows.
+Asjid Tahir@AJJI c:\xampp
+# mysql -u root
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 8
+Server version: 10.4.22-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| 19p0085_asjidtahir |
+| asjidtahir         |
+| company            |
+| form_registration  |
+| information_schema |
+| mysql              |
+| organization       |
+| performance_schema |
+| phpmyadmin         |
+| test               |
++--------------------+
+10 rows in set (0.023 sec)
+
+MariaDB [(none)]> use company
+Database changed
+MariaDB [company]> SELECT * FROM COMPANY;
+ERROR 1146 (42S02): Table 'company.company' doesn't exist
+MariaDB [company]> SHOW TABLES;
++-------------------+
+| Tables_in_company |
++-------------------+
+| dept              |
+| emp               |
+| salgrade          |
++-------------------+
+3 rows in set (0.001 sec)
+
+MariaDB [company]> select * from dept;
++--------+------------+----------+
+| deptno | dname      | location |
++--------+------------+----------+
+|     10 | Accounting | New York |
+|     20 | Research   | Dallas   |
+|     30 | Sales      | Chicago  |
+|     40 | Operations | Boston   |
++--------+------------+----------+
+4 rows in set (0.037 sec)
+
+MariaDB [company]> select * from emp
+    -> where salary = (select Max(salary) from emp);
++-------+-------+-----------+------+------------+--------+------------+--------+
+| empno | ename | job       | mgr  | hiredate   | salary | commission | deptno |
++-------+-------+-----------+------+------------+--------+------------+--------+
+|  7839 | King  | President | NULL | 2021-07-31 |   6500 |       NULL |     10 |
++-------+-------+-----------+------+------------+--------+------------+--------+
+1 row in set (0.012 sec)
+
+MariaDB [company]> select * from emp;
++-------+--------+-----------+------+------------+--------+------------+--------+
+| empno | ename  | job       | mgr  | hiredate   | salary | commission | deptno |
++-------+--------+-----------+------+------------+--------+------------+--------+
+|  7369 | Smith  | Clerk     | 7902 | 2021-07-31 |   1200 |       NULL |     20 |
+|  7499 | Allen  | Salesman  | 7566 | 2021-07-31 |   2000 |        500 |     30 |
+|  7521 | Ward   | Salesman  | 7698 | 2021-07-31 |   1650 |        800 |     30 |
+|  7566 | Jones  | Manager   | 7839 | 2021-07-31 |   3375 |       NULL |     20 |
+|  7654 | Martin | Salesman  | 7698 | 2021-07-31 |   1650 |       1400 |     30 |
+|  7698 | Blake  | Manager   | 7839 | 2021-07-31 |   3250 |       NULL |     30 |
+|  7782 | Clark  | Manager   | 7839 | 2021-07-31 |   2850 |       NULL |     10 |
+|  7788 | Scott  | Analyst   | 7566 | 2021-07-31 |   3500 |       NULL |     20 |
+|  7813 | David  | Clerk     | 7788 | 2021-07-31 |   1500 |       NULL |     20 |
+|  7839 | King   | President | NULL | 2021-07-31 |   6500 |       NULL |     10 |
+|  7844 | Turner | Salesman  | 7698 | 2021-07-31 |   1900 |          0 |     30 |
+|  7876 | Adams  | Clerk     | 7788 | 2021-07-31 |   1500 |       NULL |     20 |
+|  7900 | James  | Clerk     | 7698 | 2021-07-31 |   1350 |       NULL |     30 |
+|  7902 | Ford   | Analyst   | 7566 | 2021-07-31 |   3500 |       NULL |     20 |
+|  7934 | Miller | Clerk     | 7782 | 2021-07-31 |   1700 |       NULL |     10 |
++-------+--------+-----------+------+------------+--------+------------+--------+
+15 rows in set (0.000 sec)
+
+MariaDB [company]> select * from emp e , dept d
+    -> where e.deptno = d.deptno AND d.dname = 'sales';
++-------+--------+----------+------+------------+--------+------------+--------+--------+-------+----------+
+| empno | ename  | job      | mgr  | hiredate   | salary | commission | deptno | deptno | dname | location |
++-------+--------+----------+------+------------+--------+------------+--------+--------+-------+----------+
+|  7499 | Allen  | Salesman | 7566 | 2021-07-31 |   2000 |        500 |     30 |     30 | Sales | Chicago  |
+|  7521 | Ward   | Salesman | 7698 | 2021-07-31 |   1650 |        800 |     30 |     30 | Sales | Chicago  |
+|  7654 | Martin | Salesman | 7698 | 2021-07-31 |   1650 |       1400 |     30 |     30 | Sales | Chicago  |
+|  7698 | Blake  | Manager  | 7839 | 2021-07-31 |   3250 |       NULL |     30 |     30 | Sales | Chicago  |
+|  7844 | Turner | Salesman | 7698 | 2021-07-31 |   1900 |          0 |     30 |     30 | Sales | Chicago  |
+|  7900 | James  | Clerk    | 7698 | 2021-07-31 |   1350 |       NULL |     30 |     30 | Sales | Chicago  |
++-------+--------+----------+------+------------+--------+------------+--------+--------+-------+----------+
+6 rows in set (0.002 sec)
+
+MariaDB [company]> select * from emp e , dept d
+    ->
+    -> where e.deptno=d.deptno;
++-------+--------+-----------+------+------------+--------+------------+--------+--------+------------+----------+
+| empno | ename  | job       | mgr  | hiredate   | salary | commission | deptno | deptno | dname      | location |
++-------+--------+-----------+------+------------+--------+------------+--------+--------+------------+----------+
+|  7782 | Clark  | Manager   | 7839 | 2021-07-31 |   2850 |       NULL |     10 |     10 | Accounting | New York |
+|  7839 | King   | President | NULL | 2021-07-31 |   6500 |       NULL |     10 |     10 | Accounting | New York |
+|  7934 | Miller | Clerk     | 7782 | 2021-07-31 |   1700 |       NULL |     10 |     10 | Accounting | New York |
+|  7369 | Smith  | Clerk     | 7902 | 2021-07-31 |   1200 |       NULL |     20 |     20 | Research   | Dallas   |
+|  7566 | Jones  | Manager   | 7839 | 2021-07-31 |   3375 |       NULL |     20 |     20 | Research   | Dallas   |
+|  7788 | Scott  | Analyst   | 7566 | 2021-07-31 |   3500 |       NULL |     20 |     20 | Research   | Dallas   |
+|  7813 | David  | Clerk     | 7788 | 2021-07-31 |   1500 |       NULL |     20 |     20 | Research   | Dallas   |
+|  7876 | Adams  | Clerk     | 7788 | 2021-07-31 |   1500 |       NULL |     20 |     20 | Research   | Dallas   |
+|  7902 | Ford   | Analyst   | 7566 | 2021-07-31 |   3500 |       NULL |     20 |     20 | Research   | Dallas   |
+|  7499 | Allen  | Salesman  | 7566 | 2021-07-31 |   2000 |        500 |     30 |     30 | Sales      | Chicago  |
+|  7521 | Ward   | Salesman  | 7698 | 2021-07-31 |   1650 |        800 |     30 |     30 | Sales      | Chicago  |
+|  7654 | Martin | Salesman  | 7698 | 2021-07-31 |   1650 |       1400 |     30 |     30 | Sales      | Chicago  |
+|  7698 | Blake  | Manager   | 7839 | 2021-07-31 |   3250 |       NULL |     30 |     30 | Sales      | Chicago  |
+|  7844 | Turner | Salesman  | 7698 | 2021-07-31 |   1900 |          0 |     30 |     30 | Sales      | Chicago  |
+|  7900 | James  | Clerk     | 7698 | 2021-07-31 |   1350 |       NULL |     30 |     30 | Sales      | Chicago  |
++-------+--------+-----------+------+------------+--------+------------+--------+--------+------------+----------+
+15 rows in set (0.001 sec)
+
+MariaDB [company]> select ename from emp e , dept d
+    -> where e.deptno = d.deptno AND d.dname = 'sales';
++--------+
+| ename  |
++--------+
+| Allen  |
+| Ward   |
+| Martin |
+| Blake  |
+| Turner |
+| James  |
++--------+
+6 rows in set (0.001 sec)
+
+MariaDB [company]> select * from emp
+    -> where deptno = (select deptno from dept where location = 'New York');
++-------+--------+-----------+------+------------+--------+------------+--------+
+| empno | ename  | job       | mgr  | hiredate   | salary | commission | deptno |
++-------+--------+-----------+------+------------+--------+------------+--------+
+|  7782 | Clark  | Manager   | 7839 | 2021-07-31 |   2850 |       NULL |     10 |
+|  7839 | King   | President | NULL | 2021-07-31 |   6500 |       NULL |     10 |
+|  7934 | Miller | Clerk     | 7782 | 2021-07-31 |   1700 |       NULL |     10 |
++-------+--------+-----------+------+------------+--------+------------+--------+
+3 rows in set (0.001 sec)
+
+MariaDB [company]> select * from emp
+    -> where salary > ALL (select salary from emp where deptno = '30');
++-------+-------+-----------+------+------------+--------+------------+--------+
+| empno | ename | job       | mgr  | hiredate   | salary | commission | deptno |
++-------+-------+-----------+------+------------+--------+------------+--------+
+|  7566 | Jones | Manager   | 7839 | 2021-07-31 |   3375 |       NULL |     20 |
+|  7788 | Scott | Analyst   | 7566 | 2021-07-31 |   3500 |       NULL |     20 |
+|  7839 | King  | President | NULL | 2021-07-31 |   6500 |       NULL |     10 |
+|  7902 | Ford  | Analyst   | 7566 | 2021-07-31 |   3500 |       NULL |     20 |
++-------+-------+-----------+------+------------+--------+------------+--------+
+4 rows in set (0.001 sec)
+
+MariaDB [company]>
+MariaDB [company]> --Question no 06:
+MariaDB [company]> --List out the employees who earn more than the lowest salary in department 30.
+MariaDB [company]> select * from emp
+    -> where salary > Any (select salary from emp where deptno = '30');
++-------+--------+-----------+------+------------+--------+------------+--------+
+| empno | ename  | job       | mgr  | hiredate   | salary | commission | deptno |
++-------+--------+-----------+------+------------+--------+------------+--------+
+|  7499 | Allen  | Salesman  | 7566 | 2021-07-31 |   2000 |        500 |     30 |
+|  7521 | Ward   | Salesman  | 7698 | 2021-07-31 |   1650 |        800 |     30 |
+|  7566 | Jones  | Manager   | 7839 | 2021-07-31 |   3375 |       NULL |     20 |
+|  7654 | Martin | Salesman  | 7698 | 2021-07-31 |   1650 |       1400 |     30 |
+|  7698 | Blake  | Manager   | 7839 | 2021-07-31 |   3250 |       NULL |     30 |
+|  7782 | Clark  | Manager   | 7839 | 2021-07-31 |   2850 |       NULL |     10 |
+|  7788 | Scott  | Analyst   | 7566 | 2021-07-31 |   3500 |       NULL |     20 |
+|  7813 | David  | Clerk     | 7788 | 2021-07-31 |   1500 |       NULL |     20 |
+|  7839 | King   | President | NULL | 2021-07-31 |   6500 |       NULL |     10 |
+|  7844 | Turner | Salesman  | 7698 | 2021-07-31 |   1900 |          0 |     30 |
+|  7876 | Adams  | Clerk     | 7788 | 2021-07-31 |   1500 |       NULL |     20 |
+|  7902 | Ford   | Analyst   | 7566 | 2021-07-31 |   3500 |       NULL |     20 |
+|  7934 | Miller | Clerk     | 7782 | 2021-07-31 |   1700 |       NULL |     10 |
++-------+--------+-----------+------+------------+--------+------------+--------+
+13 rows in set (0.001 sec)
+
+MariaDB [company]> select count(*) from emp natural join dept where dname=(select dname from dept wheredname='sales');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '='sales')' at line 1
+MariaDB [company]> select count(*) from emp natural join dept
+    -> where dname=(select dname from dept wheredname='sales');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '='sales')' at line 2
+MariaDB [company]> select count(*) from emp natural join dept
+    -> where dname=(select dname from dept where dname='sales');
++----------+
+| count(*) |
++----------+
+|        6 |
++----------+
+1 row in set (0.002 sec)
+
+MariaDB [company]>
