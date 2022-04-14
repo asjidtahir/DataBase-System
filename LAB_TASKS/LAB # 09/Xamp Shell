@@ -1,0 +1,282 @@
+
+Setting environment for using XAMPP for Windows.
+Asjid Tahir@AJJI c:\xampp
+# mysql -u root
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 38
+Server version: 10.4.22-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| 19p0085_asjidtahir |
+| asjidtahir         |
+| company            |
+| fb                 |
+| form_registration  |
+| information_schema |
+| mysql              |
+| organization       |
+| performance_schema |
+| phpmyadmin         |
+| sales_co           |
+| test               |
++--------------------+
+12 rows in set (0.001 sec)
+
+MariaDB [(none)]> use fb;
+Database changed
+MariaDB [fb]> use sale_co;
+ERROR 1049 (42000): Unknown database 'sale_co'
+MariaDB [fb]> use sales_co;
+Database changed
+MariaDB [sales_co]>
+MariaDB [sales_co]>
+MariaDB [sales_co]>
+MariaDB [sales_co]> select * from product;
++----------+-------------------------------------+------------+----------+-------+---------+------------+--------+
+| P_CODE   | P_DESCRIPT                          | P_INDATE   | P_ONHAND | P_MIN | P_PRICE | P_DISCOUNT | V_CODE |
++----------+-------------------------------------+------------+----------+-------+---------+------------+--------+
+| 11QER/31 | Power painter, 15 psi., 3-nozzle    | 2003-11-03 |        8 |     5 |  109.99 |          0 |  25595 |
+| 13-Q2/P2 | 7.25-in. pwr. saw blade             | 2003-12-13 |       32 |    15 |   14.99 |       0.05 |  21344 |
+| 14-Q1/L3 | 9.00-in. pwr. saw blade             | 2003-11-13 |       18 |    12 |   17.49 |          0 |  21344 |
+| 1546-QQ2 | Hrd. cloth, 1/4-in., 2x50           | 2004-01-04 |       15 |     8 |   39.95 |          0 |  23119 |
+| 1558-QW1 | Hrd. cloth, 1/2-in., 3x50           | 2004-01-15 |       23 |     5 |   43.99 |          0 |  23119 |
+| 2232/QTY | B&D jigsaw, 12-in. blade            | 2003-12-10 |        8 |     5 |  109.92 |       0.05 |  24288 |
+| 2232/QWE | B&D jigsaw, 8-in. blade             | 2003-12-24 |        6 |     5 |   99.87 |       0.05 |  24288 |
+| 2238/QPD | B&D cordless drill, 1/2-in.         | 2004-01-20 |       12 |     5 |   38.95 |       0.05 |  25595 |
+| 23109-HB | Claw hammer                         | 2004-01-20 |       23 |    10 |    9.95 |        0.1 |  21225 |
+| 23114-AA | Sledge hammer, 12 lb.               | 2004-01-20 |        8 |     5 |    14.4 |       0.05 |   NULL |
+| 54778-2T | Rat-tail file, 1/8-in. fine         | 2003-12-15 |       43 |    20 |    4.99 |          0 |  21344 |
+| 89-WRE-Q | Hicut chain saw, 16 in.             | 2004-02-17 |       11 |     5 |  256.99 |       0.05 |  24288 |
+| PVC23DRT | PVC pipe, 3.5-in., 8-ft             | 2004-02-20 |      188 |    75 |    5.87 |          0 |   NULL |
+| SM-18277 | 1.25-in. metal screw, 25            | 2004-03-01 |      172 |    75 |    6.99 |          0 |  21225 |
+| SW-23116 | 2.5-in. wd. screw, 50               | 2004-02-24 |      237 |   100 |    8.45 |          0 |  21231 |
+| WR3/TT3  | Steel matting, 4'x8'x1/6", .5" mesh | 2004-01-07 |       18 |     5 |  119.95 |        0.1 |  25595 |
++----------+-------------------------------------+------------+----------+-------+---------+------------+--------+
+16 rows in set (0.001 sec)
+
+MariaDB [sales_co]> select * from product
+    ->
+    ->
+    ->
+    ->
+    ->
+    -> ;
++----------+-------------------------------------+------------+----------+-------+---------+------------+--------+
+| P_CODE   | P_DESCRIPT                          | P_INDATE   | P_ONHAND | P_MIN | P_PRICE | P_DISCOUNT | V_CODE |
++----------+-------------------------------------+------------+----------+-------+---------+------------+--------+
+| 11QER/31 | Power painter, 15 psi., 3-nozzle    | 2003-11-03 |        8 |     5 |  109.99 |          0 |  25595 |
+| 13-Q2/P2 | 7.25-in. pwr. saw blade             | 2003-12-13 |       32 |    15 |   14.99 |       0.05 |  21344 |
+| 14-Q1/L3 | 9.00-in. pwr. saw blade             | 2003-11-13 |       18 |    12 |   17.49 |          0 |  21344 |
+| 1546-QQ2 | Hrd. cloth, 1/4-in., 2x50           | 2004-01-04 |       15 |     8 |   39.95 |          0 |  23119 |
+| 1558-QW1 | Hrd. cloth, 1/2-in., 3x50           | 2004-01-15 |       23 |     5 |   43.99 |          0 |  23119 |
+| 2232/QTY | B&D jigsaw, 12-in. blade            | 2003-12-10 |        8 |     5 |  109.92 |       0.05 |  24288 |
+| 2232/QWE | B&D jigsaw, 8-in. blade             | 2003-12-24 |        6 |     5 |   99.87 |       0.05 |  24288 |
+| 2238/QPD | B&D cordless drill, 1/2-in.         | 2004-01-20 |       12 |     5 |   38.95 |       0.05 |  25595 |
+| 23109-HB | Claw hammer                         | 2004-01-20 |       23 |    10 |    9.95 |        0.1 |  21225 |
+| 23114-AA | Sledge hammer, 12 lb.               | 2004-01-20 |        8 |     5 |    14.4 |       0.05 |   NULL |
+| 54778-2T | Rat-tail file, 1/8-in. fine         | 2003-12-15 |       43 |    20 |    4.99 |          0 |  21344 |
+| 89-WRE-Q | Hicut chain saw, 16 in.             | 2004-02-17 |       11 |     5 |  256.99 |       0.05 |  24288 |
+| PVC23DRT | PVC pipe, 3.5-in., 8-ft             | 2004-02-20 |      188 |    75 |    5.87 |          0 |   NULL |
+| SM-18277 | 1.25-in. metal screw, 25            | 2004-03-01 |      172 |    75 |    6.99 |          0 |  21225 |
+| SW-23116 | 2.5-in. wd. screw, 50               | 2004-02-24 |      237 |   100 |    8.45 |          0 |  21231 |
+| WR3/TT3  | Steel matting, 4'x8'x1/6", .5" mesh | 2004-01-07 |       18 |     5 |  119.95 |        0.1 |  25595 |
++----------+-------------------------------------+------------+----------+-------+---------+------------+--------+
+16 rows in set (0.000 sec)
+
+MariaDB [sales_co]> delimiter $$
+MariaDB [sales_co]> select * from product
+    ->
+    -> ;
+    ->
+    ->
+    ->
+    -> ;
+    ->
+    ->
+    ->
+    ->
+    ->
+    -> $$
++----------+-------------------------------------+------------+----------+-------+---------+------------+--------+
+| P_CODE   | P_DESCRIPT                          | P_INDATE   | P_ONHAND | P_MIN | P_PRICE | P_DISCOUNT | V_CODE |
++----------+-------------------------------------+------------+----------+-------+---------+------------+--------+
+| 11QER/31 | Power painter, 15 psi., 3-nozzle    | 2003-11-03 |        8 |     5 |  109.99 |          0 |  25595 |
+| 13-Q2/P2 | 7.25-in. pwr. saw blade             | 2003-12-13 |       32 |    15 |   14.99 |       0.05 |  21344 |
+| 14-Q1/L3 | 9.00-in. pwr. saw blade             | 2003-11-13 |       18 |    12 |   17.49 |          0 |  21344 |
+| 1546-QQ2 | Hrd. cloth, 1/4-in., 2x50           | 2004-01-04 |       15 |     8 |   39.95 |          0 |  23119 |
+| 1558-QW1 | Hrd. cloth, 1/2-in., 3x50           | 2004-01-15 |       23 |     5 |   43.99 |          0 |  23119 |
+| 2232/QTY | B&D jigsaw, 12-in. blade            | 2003-12-10 |        8 |     5 |  109.92 |       0.05 |  24288 |
+| 2232/QWE | B&D jigsaw, 8-in. blade             | 2003-12-24 |        6 |     5 |   99.87 |       0.05 |  24288 |
+| 2238/QPD | B&D cordless drill, 1/2-in.         | 2004-01-20 |       12 |     5 |   38.95 |       0.05 |  25595 |
+| 23109-HB | Claw hammer                         | 2004-01-20 |       23 |    10 |    9.95 |        0.1 |  21225 |
+| 23114-AA | Sledge hammer, 12 lb.               | 2004-01-20 |        8 |     5 |    14.4 |       0.05 |   NULL |
+| 54778-2T | Rat-tail file, 1/8-in. fine         | 2003-12-15 |       43 |    20 |    4.99 |          0 |  21344 |
+| 89-WRE-Q | Hicut chain saw, 16 in.             | 2004-02-17 |       11 |     5 |  256.99 |       0.05 |  24288 |
+| PVC23DRT | PVC pipe, 3.5-in., 8-ft             | 2004-02-20 |      188 |    75 |    5.87 |          0 |   NULL |
+| SM-18277 | 1.25-in. metal screw, 25            | 2004-03-01 |      172 |    75 |    6.99 |          0 |  21225 |
+| SW-23116 | 2.5-in. wd. screw, 50               | 2004-02-24 |      237 |   100 |    8.45 |          0 |  21231 |
+| WR3/TT3  | Steel matting, 4'x8'x1/6", .5" mesh | 2004-01-07 |       18 |     5 |  119.95 |        0.1 |  25595 |
++----------+-------------------------------------+------------+----------+-------+---------+------------+--------+
+16 rows in set (0.000 sec)
+
+MariaDB [sales_co]> CREATE PROCEDURE PRG_PROD()
+    -> BEGIN
+    -> UPDATE PRODUCT
+    -> SET P_DISCOUNT=(P_DISCOUNT*0.05)+P_DISCOUNT
+    -> WHERE P_ONHAND>=P_MIN*2;
+    -> END $$
+Query OK, 0 rows affected (0.006 sec)
+
+MariaDB [sales_co]> CALL PRG_PROD()
+    -> ;
+    -> $$
+Query OK, 5 rows affected (0.002 sec)
+
+MariaDB [sales_co]> SELECT * FROM PROCEDURE;
+    -> $$
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'PROCEDURE' at line 1
+MariaDB [sales_co]> SELECT * FROM PRG_PROD;
+    -> $$
+ERROR 1146 (42S02): Table 'sales_co.prg_prod' doesn't exist
+MariaDB [sales_co]> DELIMITER $$
+MariaDB [sales_co]> CREATE PROCEDURE my_procedure_Local_Variables()
+    -> BEGIN /* declare local variables */
+    -> DECLARE a INT DEFAULT 10;
+    -> DECLARE b, c INT; /* using the local variables */
+    -> SET a = a + 100;
+    -> SET b = 2;
+    -> SET c = a + b;
+    -> BEGIN /* local variable in nested block */
+    -> DECLARE c INT;
+    -> SET c = 5;
+    -> /* local variable c takes precedence over the one of the
+   /*> same name declared in the enclosing block. */
+    -> SELECT a, b, c;
+    -> END;
+    -> SELECT a, b, c;
+    -> END$$
+Query OK, 0 rows affected (0.008 sec)
+
+MariaDB [sales_co]> DELIMITER ;
+MariaDB [sales_co]> CALL my_procedure_Local_Variables();
++------+------+------+
+| a    | b    | c    |
++------+------+------+
+|  110 |    2 |    5 |
++------+------+------+
+1 row in set (0.001 sec)
+
++------+------+------+
+| a    | b    | c    |
++------+------+------+
+|  110 |    2 |  112 |
++------+------+------+
+1 row in set (0.009 sec)
+
+Query OK, 0 rows affected (0.017 sec)
+
+MariaDB [sales_co]> DELIMITER $$
+MariaDB [sales_co]> CREATE PROCEDURE my_proc_IN (IN var1 INT)
+    -> BEGIN
+    -> SELECT * FROM PRODUCT where P_ONHAND = var1;
+    -> END$$
+Query OK, 0 rows affected (0.007 sec)
+
+MariaDB [sales_co]> DELIMITER ;
+MariaDB [sales_co]> call my_proc_IN(8);
++----------+----------------------------------+------------+----------+-------+---------+------------+--------+
+| P_CODE   | P_DESCRIPT                       | P_INDATE   | P_ONHAND | P_MIN | P_PRICE | P_DISCOUNT | V_CODE |
++----------+----------------------------------+------------+----------+-------+---------+------------+--------+
+| 11QER/31 | Power painter, 15 psi., 3-nozzle | 2003-11-03 |        8 |     5 |  109.99 |          0 |  25595 |
+| 2232/QTY | B&D jigsaw, 12-in. blade         | 2003-12-10 |        8 |     5 |  109.92 |       0.05 |  24288 |
+| 23114-AA | Sledge hammer, 12 lb.            | 2004-01-20 |        8 |     5 |    14.4 |       0.05 |   NULL |
++----------+----------------------------------+------------+----------+-------+---------+------------+--------+
+3 rows in set (0.001 sec)
+
+Query OK, 0 rows affected (0.043 sec)
+
+MariaDB [sales_co]> DELIMITER $$
+MariaDB [sales_co]> CREATE PROCEDURE PRG_AVG_PRICE(out avg_price decimal)
+    -> BEGIN
+    -> SELECT AVG(P_PRICE) INTO avg_price FROM PRODUCT;
+    -> END$$
+Query OK, 0 rows affected (0.006 sec)
+
+MariaDB [sales_co]>
+MariaDB [sales_co]> DELIMITER $$
+MariaDB [sales_co]> CREATE PROCEDURE PRG_AVG_PRICE(out avg_price decimal)
+    -> BEGIN
+    -> SELECT AVG(P_PRICE) INTO avg_price FROM PRODUCT;
+    -> END$$
+ERROR 1304 (42000): PROCEDURE PRG_AVG_PRICE already exists
+MariaDB [sales_co]> call prg_avg_price(@out);
+    -> SELECT @out;
+    -> $$
+Query OK, 1 row affected, 1 warning (0.001 sec)
+
++------+
+| @out |
++------+
+|   56 |
++------+
+1 row in set (0.002 sec)
+
+MariaDB [sales_co]> show tables
+    -> ;
+    -> $$
++--------------------+
+| Tables_in_sales_co |
++--------------------+
+| customer           |
+| invoice            |
+| line               |
+| product            |
+| vendor             |
++--------------------+
+5 rows in set (0.001 sec)
+
+MariaDB [sales_co]> use fb;
+ERROR 1049 (42000): Unknown database 'fb;'
+MariaDB [sales_co]> $$
+ERROR: No query specified
+
+MariaDB [sales_co]> show databases$$
++--------------------+
+| Database           |
++--------------------+
+| 19p0085_asjidtahir |
+| asjidtahir         |
+| company            |
+| fb                 |
+| form_registration  |
+| information_schema |
+| mysql              |
+| organization       |
+| performance_schema |
+| phpmyadmin         |
+| sales_co           |
+| test               |
++--------------------+
+12 rows in set (0.001 sec)
+
+MariaDB [sales_co]> use fb
+Database changed
+MariaDB [fb]> CREATE TABLE `blog` (
+    -> `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+    -> `title` text,
+    -> `content` text,
+    -> `deleted` tinyint(1) unsigned NOT NULL DEFAULT '0',
+    -> PRIMARY KEY (`id`),
+    -> INDEX (deleted)
+    -> );
+    ->
+    -> $$
+ERROR 1050 (42S01): Table 'blog' already exists
+MariaDB [fb]>
