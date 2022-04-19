@@ -1,0 +1,412 @@
+
+Setting environment for using XAMPP for Windows.
+Asjid Tahir@AJJI c:\xampp
+# mysql -u root
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 8
+Server version: 10.4.22-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| 19p0085_asjidtahir |
+| asjidtahir         |
+| company            |
+| fb                 |
+| form_registration  |
+| information_schema |
+| mysql              |
+| organization       |
+| performance_schema |
+| phpmyadmin         |
+| sales_co           |
+| test               |
++--------------------+
+12 rows in set (0.031 sec)
+
+MariaDB [(none)]> create database person;
+Query OK, 1 row affected (0.001 sec)
+
+MariaDB [(none)]> use person
+Database changed
+MariaDB [person]> create table users(
+    ->     user_id int(8) not null primary key,
+    ->     username varchar(6) not null,
+    ->     password varchar (5) not null,
+    ->     email varchar(30) not null,
+    ->     salary int (8) not null,
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 7
+MariaDB [person]> create table users(
+    ->     user_id int(8) not null primary key,
+    ->     username varchar(15) not null,
+    ->     password varchar (5) not null,
+    ->     email varchar(30) not null,
+    ->     salary int (8) not null,
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 7
+MariaDB [person]> create table users(
+    ->     user_id int(8) not null primary key,
+    ->     username varchar(15) not null,
+    ->     password varchar(5) not null,
+    ->     email varchar(30) not null,
+    ->     salary int(8) not null
+    -> );
+Query OK, 0 rows affected (0.023 sec)
+
+MariaDB [person]> insert into users value(1,'abc123','def321','abc123@yahoo.com',3000);
+Query OK, 1 row affected, 1 warning (0.044 sec)
+
+MariaDB [person]> insert into users value(1,'xyz789','asd123','xyz789@@yahoo.com',3000);
+ERROR 1062 (23000): Duplicate entry '1' for key 'PRIMARY'
+MariaDB [person]> insert into users value(2,'xyz789','asd123','xyz789@@yahoo.com',3000);
+Query OK, 1 row affected, 1 warning (0.002 sec)
+
+MariaDB [person]> select * from users;
++---------+----------+----------+-------------------+--------+
+| user_id | username | password | email             | salary |
++---------+----------+----------+-------------------+--------+
+|       1 | abc123   | def32    | abc123@yahoo.com  |   3000 |
+|       2 | xyz789   | asd12    | xyz789@@yahoo.com |   3000 |
++---------+----------+----------+-------------------+--------+
+2 rows in set (0.001 sec)
+
+MariaDB [person]> create table summary(
+    ->     id tinyint(1) not null primary key,
+    ->     index(user_id),
+    ->     total_users tinyint(2) not null,
+    ->     yahoo tinyint (1) not null,
+    ->     hotmail tinyint(1) not null,
+    ->     gmail tinyint(1) not null,
+    ->     index (total_users),
+    ->     index(hotmail),
+    ->     index (yahoo),
+    ->     index (gmail),
+    ->     constraint foreign key  (total_users) references users (user_id)
+    -> );
+ERROR 1072 (42000): Key column 'user_id' doesn't exist in table
+MariaDB [person]> create table summary(
+    ->     id tinyint(1) not null primary key,
+    ->     total_users tinyint(2) not null,
+    ->     yahoo tinyint (1) not null,
+    ->     hotmail tinyint(1) not null,
+    ->     gmail tinyint(1) not null,
+    ->     index (total_users),
+    ->     index(hotmail),
+    ->     index (yahoo),
+    ->     index (gmail),
+    ->     constraint foreign key  (total_users) references users (user_id)
+    -> );
+ERROR 1005 (HY000): Can't create table `person`.`summary` (errno: 150 "Foreign key constraint is incorrectly formed")
+MariaDB [person]> create table summary(
+    ->     id tinyint(1) not null primary key,
+    ->     total_users tinyint(2) not null,
+    ->     yahoo tinyint (1) not null,
+    ->     hotmail tinyint(1) not null,
+    ->     gmail tinyint(1) not null,
+    ->     index (total_users),
+    ->     index(hotmail),
+    ->     index (yahoo),
+    ->     index (gmail),
+    ->     foreign key  (total_users) references users (user_id)
+    -> );
+ERROR 1005 (HY000): Can't create table `person`.`summary` (errno: 150 "Foreign key constraint is incorrectly formed")
+MariaDB [person]> create table summary(
+    ->     id tinyint(1) not null primary key,
+    ->     total_users tinyint(2) not null,
+    ->     yahoo tinyint (1) not null,
+    ->     hotmail tinyint(1) not null,
+    ->     gmail tinyint(1) not null,
+    ->     index (total_users),
+    ->     index(hotmail),
+    ->     index (yahoo),
+    ->     index (gmail),
+    ->     foreign key  (total_users) references users (user_id) on delete cascade on update cascade
+    -> );
+ERROR 1005 (HY000): Can't create table `person`.`summary` (errno: 150 "Foreign key constraint is incorrectly formed")
+MariaDB [person]> CREATE TABLE SUMMARY (
+    -> ID MEDIUMINT(8) UNSIGNED NOT NULL AUTO_INCREMENT,
+    -> TOTAL_USER MEDIUMINT(8) UNSIGNED NOT NULL,
+    -> YAHOO TINYINT(1) UNSIGNED NOT NULL DEFAULT '1',
+    -> HOTMAIL TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
+    -> GMAIL TINYINT(1) UNSIGNED NOT NULL DEFAULT '1',
+    -> PRIMARY KEY (ID), INDEX(TOTAL_USER),
+    -> INDEX(TOTAL_USER),
+    -> INDEX(YAHOO),
+    -> INDEX(HOTMAIL),
+    -> INDEX(GMAIL),
+    -> FOREIGN KEY (TOTAL_USER) REFERENCES USERS (USER_ID) ON DELETE CASCADE ON UPDATE
+    -> CASCADE );
+ERROR 1005 (HY000): Can't create table `person`.`summary` (errno: 150 "Foreign key constraint is incorrectly formed")
+MariaDB [person]> create table summary(
+    ->     id tinyint(1) not null primary key,
+    ->     total_users tinyint(2) not null,
+    ->     yahoo tinyint (1) not null,
+    ->     hotmail tinyint(1) not null,
+    ->     gmail tinyint(1) not null,
+    ->     index (total_users),
+    ->     index(hotmail),
+    ->     index (yahoo),
+    ->     index (gmail),
+    ->     constraint fk_summary foreign key  (total_users) references users (user_id)
+    -> );
+ERROR 1005 (HY000): Can't create table `person`.`summary` (errno: 150 "Foreign key constraint is incorrectly formed")
+MariaDB [person]> create table summary(
+    ->     id tinyint(1) not null primary key,
+    ->     index(user_id),
+    ->     total_users tinyint(2) not null,
+    ->     yahoo tinyint (1) not null,
+    ->     hotmail tinyint(1) not null,
+    ->     gmail tinyint(1) not null,,
+    ->     constraint fk_summary foreign key (total_users) references users (user_id)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '
+    constraint fk_summary foreign key (total_users) references users (user_i...' at line 7
+MariaDB [person]> create table summary(
+    ->     id tinyint(1) not null primary key,
+    ->     index(user_id),
+    ->     total_users tinyint(2) not null,
+    ->     yahoo tinyint (1) not null,
+    ->     hotmail tinyint(1) not null,
+    ->     gmail tinyint(1) not null,
+    ->     constraint fk_summary foreign key (total_users) references users (user_id)
+    -> );
+ERROR 1072 (42000): Key column 'user_id' doesn't exist in table
+MariaDB [person]>
+MariaDB [person]> create table summary(
+    ->     id tinyint(1) not null primary key,
+    ->     total_users tinyint(2) not null,
+    ->     yahoo tinyint (1) not null,
+    ->     hotmail tinyint(1) not null,
+    ->     gmail tinyint(1) not null,
+    ->     constraint fk_summary foreign key (total_users) references users (user_id)
+    -> );
+ERROR 1005 (HY000): Can't create table `person`.`summary` (errno: 150 "Foreign key constraint is incorrectly formed")
+MariaDB [person]> create table summary(
+    ->     id tinyint(1) not null primary key,
+    ->     index(user_id),
+    ->     total_users tinyint(2) not null,
+    ->     yahoo tinyint (1) not null,
+    ->     hotmail tinyint(1) not null,
+    ->     gmail tinyint(1) not null,
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 8
+MariaDB [person]> create table summary(
+    ->     id tinyint(1) not null primary key,
+    ->     index(user_id),
+    ->     total_users tinyint(2) not null,
+    ->     yahoo tinyint (1) not null,
+    ->     hotmail tinyint(1) not null,
+    ->     gmail tinyint(1) not null
+    -> );
+ERROR 1072 (42000): Key column 'user_id' doesn't exist in table
+MariaDB [person]>
+MariaDB [person]> create table summary(
+    ->     id tinyint(1) not null primary key,
+    ->     total_users tinyint(2) not null,
+    ->     yahoo tinyint (1) not null,
+    ->     hotmail tinyint(1) not null,
+    ->     gmail tinyint(1) not null
+    -> );
+Query OK, 0 rows affected (0.024 sec)
+
+MariaDB [person]> insert into summary values(1,2,1,0,1);
+Query OK, 1 row affected (0.004 sec)
+
+MariaDB [person]> select * from summary;
++----+-------------+-------+---------+-------+
+| id | total_users | yahoo | hotmail | gmail |
++----+-------------+-------+---------+-------+
+|  1 |           2 |     1 |       0 |     1 |
++----+-------------+-------+---------+-------+
+1 row in set (0.000 sec)
+
+MariaDB [person]> DELIMITER $$
+MariaDB [person]> CREATE PROCEDURE TASK1()
+    -> BEGIN
+    -> INSERT INTO SUMMARY VALUES (2,4,2,0,5);
+    -> END$$
+Query OK, 0 rows affected, 5 warnings (0.037 sec)
+
+MariaDB [person]> CALL TASK1$$
+Query OK, 1 row affected (0.004 sec)
+
+MariaDB [person]> SELECT * FROM SUMMARY$$
++----+-------------+-------+---------+-------+
+| id | total_users | yahoo | hotmail | gmail |
++----+-------------+-------+---------+-------+
+|  1 |           2 |     1 |       0 |     1 |
+|  2 |           4 |     2 |       0 |     5 |
++----+-------------+-------+---------+-------+
+2 rows in set (0.000 sec)
+
+MariaDB [person]> CREATE PROCEDURE TASK2()
+    -> BEGIN
+    -> INSERT INTO USERS VALUES(4, 'BILAL','HELLOWORLD','IBI@GMAIL.COM');
+    -> END$$
+Query OK, 0 rows affected (0.004 sec)
+
+MariaDB [person]> CALL TASK2$$
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+MariaDB [person]> SELECT * FROM USERS$$
++---------+----------+----------+-------------------+--------+
+| user_id | username | password | email             | salary |
++---------+----------+----------+-------------------+--------+
+|       1 | abc123   | def32    | abc123@yahoo.com  |   3000 |
+|       2 | xyz789   | asd12    | xyz789@@yahoo.com |   3000 |
++---------+----------+----------+-------------------+--------+
+2 rows in set (0.000 sec)
+
+MariaDB [person]> select * from users;
+    -> $$
++---------+----------+----------+-------------------+--------+
+| user_id | username | password | email             | salary |
++---------+----------+----------+-------------------+--------+
+|       1 | abc123   | def32    | abc123@yahoo.com  |   3000 |
+|       2 | xyz789   | asd12    | xyz789@@yahoo.com |   3000 |
++---------+----------+----------+-------------------+--------+
+2 rows in set (0.001 sec)
+
+MariaDB [person]> select min(salary) from users;
+    -> $$
++-------------+
+| min(salary) |
++-------------+
+|        3000 |
++-------------+
+1 row in set (0.004 sec)
+
+MariaDB [person]> SELECT AVG(SALARY) FROM USERS;
+    -> $$
++-------------+
+| AVG(SALARY) |
++-------------+
+|   3000.0000 |
++-------------+
+1 row in set (0.001 sec)
+
+MariaDB [person]> CREATE PROCEDURE TASK2()
+    -> BEGIN
+    -> INSERT INTO USERS VALUES(4, 'BILAL','HELLOWORLD','IBI@GMAIL.COM',5000);
+    -> END$$
+ERROR 1304 (42000): PROCEDURE TASK2 already exists
+MariaDB [person]> CREATE PROCEDURE TASK3()
+    -> BEGIN
+    -> INSERT INTO USERS VALUES(4, 'BILAL','HELLOWORLD','IBI@GMAIL.COM',5000);
+    -> END$$
+Query OK, 0 rows affected (0.005 sec)
+
+MariaDB [person]>
+MariaDB [person]> CALL TASK3$$
+Query OK, 1 row affected, 1 warning (0.002 sec)
+
+MariaDB [person]> SELECT * FROM USERS$$
++---------+----------+----------+-------------------+--------+
+| user_id | username | password | email             | salary |
++---------+----------+----------+-------------------+--------+
+|       1 | abc123   | def32    | abc123@yahoo.com  |   3000 |
+|       2 | xyz789   | asd12    | xyz789@@yahoo.com |   3000 |
+|       4 | BILAL    | HELLO    | IBI@GMAIL.COM     |   5000 |
++---------+----------+----------+-------------------+--------+
+3 rows in set (0.000 sec)
+
+MariaDB [person]> SELECT MIN(SALARY) FROM USERS;
+    -> $$
++-------------+
+| MIN(SALARY) |
++-------------+
+|        3000 |
++-------------+
+1 row in set (0.001 sec)
+
+MariaDB [person]> SELECT AVG(SALARY) FROM USERS;
+    -> $$
++-------------+
+| AVG(SALARY) |
++-------------+
+|   3666.6667 |
++-------------+
+1 row in set (0.001 sec)
+
+MariaDB [person]> CREATE PROCEDURE MINMAX()
+    -> BEGIN
+    -> SELECT MIN(SALARY) FROM USERS;
+    -> SELECT MAX(salary) FROM USERS;
+    -> END$$
+Query OK, 0 rows affected (0.007 sec)
+
+MariaDB [person]> CALL MINMAX$$
++-------------+
+| MIN(SALARY) |
++-------------+
+|        3000 |
++-------------+
+1 row in set (0.001 sec)
+
++-------------+
+| MAX(salary) |
++-------------+
+|        5000 |
++-------------+
+1 row in set (0.009 sec)
+
+Query OK, 0 rows affected (0.015 sec)
+
+MariaDB [person]> Delimiter $$
+MariaDB [person]> create trigger task7a after insert
+    -> on person.users
+    -> for each row begin
+    -> insert into person.summary (TOTAL_USER) values (NEW.user_id);
+    -> end$$
+Query OK, 0 rows affected (0.006 sec)
+
+MariaDB [person]> insert into users (username,password,email) values ('asjid','abc123','asjid@gmail.com')$$
+ERROR 1054 (42S22): Unknown column 'TOTAL_USER' in 'field list'
+MariaDB [person]> select * from users$$
++---------+----------+----------+-------------------+--------+
+| user_id | username | password | email             | salary |
++---------+----------+----------+-------------------+--------+
+|       1 | abc123   | def32    | abc123@yahoo.com  |   3000 |
+|       2 | xyz789   | asd12    | xyz789@@yahoo.com |   3000 |
+|       4 | BILAL    | HELLO    | IBI@GMAIL.COM     |   5000 |
++---------+----------+----------+-------------------+--------+
+3 rows in set (0.001 sec)
+
+MariaDB [person]> select * from summary$$
++----+-------------+-------+---------+-------+
+| id | total_users | yahoo | hotmail | gmail |
++----+-------------+-------+---------+-------+
+|  1 |           2 |     1 |       0 |     1 |
+|  2 |           4 |     2 |       0 |     5 |
++----+-------------+-------+---------+-------+
+2 rows in set (0.001 sec)
+
+MariaDB [person]> insert into users (username,password,email) values ('asjid','abc123','asjid@gmail.com')$$
+ERROR 1054 (42S22): Unknown column 'TOTAL_USER' in 'field list'
+MariaDB [person]> insert into users (username,password,email) values ('rajput','fast123','fast@gmail.com')$$
+ERROR 1054 (42S22): Unknown column 'TOTAL_USER' in 'field list'
+MariaDB [person]> select * from users$$
++---------+----------+----------+-------------------+--------+
+| user_id | username | password | email             | salary |
++---------+----------+----------+-------------------+--------+
+|       1 | abc123   | def32    | abc123@yahoo.com  |   3000 |
+|       2 | xyz789   | asd12    | xyz789@@yahoo.com |   3000 |
+|       4 | BILAL    | HELLO    | IBI@GMAIL.COM     |   5000 |
++---------+----------+----------+-------------------+--------+
+3 rows in set (0.000 sec)
+
+MariaDB [person]> select * from summary$$
++----+-------------+-------+---------+-------+
+| id | total_users | yahoo | hotmail | gmail |
++----+-------------+-------+---------+-------+
+|  1 |           2 |     1 |       0 |     1 |
+|  2 |           4 |     2 |       0 |     5 |
++----+-------------+-------+---------+-------+
+2 rows in set (0.000 sec)
+
+MariaDB [person]>
