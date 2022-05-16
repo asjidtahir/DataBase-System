@@ -1,0 +1,46 @@
+show dbs;
+
+use p190085_asjidtahir
+
+
+
+db.createCollection("users");
+show collections;
+
+
+
+db.user.insert({username: "Asjid",
+... password:
+... "ajji1234",
+... email:"p190085@nu.edu.pk",
+... DOB:"2001-10-09",
+... Address:"Lahore",
+... Contact:"03354178360"})
+
+
+db.user.insert({username: "Ahmed",
+... password:
+... "asdf1234",
+... email:"asjidtahir06@gmail.com",
+... DOB:"2001-09-09",
+... Address:"Lahore",
+... Contact:"0333-4281122"})
+
+
+db.user.insert({username:"Tahir",
+... password:
+... "aeiou123",
+... email:
+... "omi123#gmail.com",
+... DOB:
+... "2002-07-08",
+... Address:
+... "Lahore",
+... Contact:
+... "0307-4281122"})
+
+
+db.user.find().pretty()
+
+
+
