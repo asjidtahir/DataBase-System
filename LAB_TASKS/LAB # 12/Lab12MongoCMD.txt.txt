@@ -1,0 +1,356 @@
+Microsoft Windows [Version 10.0.22000.675]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\WINDOWS\system32>cd C:\mongodb\bin
+
+C:\mongodb\bin>net start mongodb
+The requested service has already been started.
+
+More help is available by typing NET HELPMSG 2182.
+
+
+C:\mongodb\bin>mongo
+MongoDB shell version v5.0.8
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("3cdbb9f5-2ce3-40c7-986f-4cd56a602e25") }
+MongoDB server version: 5.0.8
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting:
+        2022-05-18T15:56:03.095+05:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show dbs
+admin               0.000GB
+bcs-4b              0.007GB
+config              0.000GB
+local               0.000GB
+p190085_asjidtahir  0.000GB
+> use bcs-4b
+switched to db bcs-4b
+
+> db.Cities.find({timezone: "Africa/Harare"}).pretty()
+{
+        "_id" : ObjectId("6284ca0f694facf94065a0b5"),
+        "name" : "Zvishavane",
+        "country" : "ZW",
+        "timezone" : "Africa/Harare",
+        "population" : 35896,
+        "location" : {
+                "latitude" : -20.32674,
+                "longitude" : 30.06648
+        }
+}
+{
+        "_id" : ObjectId("6284ca0f694facf94065a0b6"),
+        "name" : "Victoria Falls",
+        "country" : "ZW",
+        "timezone" : "Africa/Harare",
+        "population" : 35761,
+        "location" : {
+                "latitude" : -17.92353,
+                "longitude" : 25.84299
+        }
+}
+{
+        "_id" : ObjectId("6284ca0f694facf94065a0b7"),
+        "name" : "Shurugwi",
+        "country" : "ZW",
+        "timezone" : "Africa/Harare",
+        "population" : 17075,
+        "location" : {
+                "latitude" : -19.67016,
+                "longitude" : 30.00589
+        }
+}
+{
+        "_id" : ObjectId("6284ca0f694facf94065a0b8"),
+        "name" : "Shangani",
+        "country" : "ZW",
+        "timezone" : "Africa/Harare",
+        "population" : 3835,
+        "location" : {
+                "latitude" : -19.78333,
+                "longitude" : 29.36667
+        }
+}
+{
+        "_id" : ObjectId("6284ca0f694facf94065a0b9"),
+        "name" : "Shamva",
+        "country" : "ZW",
+        "timezone" : "Africa/Harare",
+        "population" : 10317,
+        "location" : {
+                "latitude" : -17.31159,
+                "longitude" : 31.57561
+        }
+}
+{
+        "_id" : ObjectId("6284ca0f694facf94065a0ba"),
+        "name" : "Rusape",
+        "country" : "ZW",
+        "timezone" : "Africa/Harare",
+        "population" : 29292,
+        "location" : {
+                "latitude" : -18.52785,
+                "longitude" : 32.12843
+        }
+}
+{
+        "_id" : ObjectId("6284ca0f694facf94065a0bb"),
+        "name" : "Redcliff",
+        "country" : "ZW",
+        "timezone" : "Africa/Harare",
+        "population" : 33197,
+        "location" : {
+                "latitude" : -19.03333,
+                "longitude" : 29.78333
+        }
+}
+{
+        "_id" : ObjectId("6284ca0f694facf94065a0bc"),
+        "name" : "Raffingora",
+        "country" : "ZW",
+        "timezone" : "Africa/Harare",
+        "population" : 1957,
+        "location" : {
+                "latitude" : -17.03333,
+                "longitude" : 30.43333
+        }
+}
+{
+        "_id" : ObjectId("6284ca0f694facf94065a0bd"),
+        "name" : "Plumtree",
+        "country" : "ZW",
+        "timezone" : "Africa/Harare",
+        "population" : 2148,
+        "location" : {
+                "latitude" : -20.48333,
+                "longitude" : 27.81667
+        }
+}
+{
+        "_id" : ObjectId("6284ca0f694facf94065a0be"),
+        "name" : "Penhalonga",
+        "country" : "ZW",
+        "timezone" : "Africa/Harare",
+        "population" : 7681,
+        "location" : {
+                "latitude" : -18.89112,
+                "longitude" : 32.69781
+        }
+}
+{
+        "_id" : ObjectId("6284ca0f694facf94065a0bf"),
+        "name" : "Odzi",
+        "country" : "ZW",
+        "timezone" : "Africa/Harare",
+        "population" : 3438,
+        "location" : {
+                "latitude" : -18.96167,
+                "longitude" : 32.40557
+        }
+}
+{
+        "_id" : ObjectId("6284ca0f694facf94065a0c0"),
+        "name" : "Nyazura",
+        "country" : "ZW",
+        "timezone" : "Africa/Harare",
+        "population" : 2110,
+        "location" : {
+                "latitude" : -18.70587,
+                "longitude" : 32.16796
+        }
+}
+{
+        "_id" : ObjectId("6284ca0f694facf94065a0c1"),
+        "name" : "Nyanga",
+        "country" : "ZW",
+        "timezone" : "Africa/Harare",
+        "population" : 4852,
+        "location" : {
+                "latitude" : -18.21667,
+                "longitude" : 32.75
+        }
+}
+{
+        "_id" : ObjectId("6284ca0f694facf94065a0c2"),
+        "name" : "Norton",
+        "country" : "ZW",
+        "timezone" : "Africa/Harare",
+        "population" : 52054,
+        "location" : {
+                "latitude" : -17.88333,
+                "longitude" : 30.7
+        }
+}
+{
+        "_id" : ObjectId("6284ca0f694facf94065a0c3"),
+        "name" : "Mvurwi",
+        "country" : "ZW",
+        "timezone" : "Africa/Harare",
+        "population" : 7970,
+        "location" : {
+                "latitude" : -17.03333,
+                "longitude" : 30.85
+        }
+}
+{
+        "_id" : ObjectId("6284ca0f694facf94065a0c4"),
+        "name" : "Mvuma",
+        "country" : "ZW",
+        "timezone" : "Africa/Harare",
+        "population" : 4331,
+        "location" : {
+                "latitude" : -19.27924,
+                "longitude" : 30.52828
+        }
+}
+{
+        "_id" : ObjectId("6284ca0f694facf94065a0c5"),
+        "name" : "Mutoko",
+        "country" : "ZW",
+        "timezone" : "Africa/Harare",
+        "population" : 9532,
+        "location" : {
+                "latitude" : -17.39699,
+                "longitude" : 32.22677
+        }
+}
+{
+        "_id" : ObjectId("6284ca0f694facf94065a0c6"),
+        "name" : "Mutare",
+        "country" : "ZW",
+        "timezone" : "Africa/Harare",
+        "population" : 184205,
+        "location" : {
+                "latitude" : -18.9707,
+                "longitude" : 32.67086
+        }
+}
+{
+        "_id" : ObjectId("6284ca0f694facf94065a0c7"),
+        "name" : "Murehwa",
+        "country" : "ZW",
+        "timezone" : "Africa/Harare",
+        "population" : 8559,
+        "location" : {
+                "latitude" : -17.64322,
+                "longitude" : 31.784
+        }
+}
+{
+        "_id" : ObjectId("6284ca0f694facf94065a0c8"),
+        "name" : "Mount Darwin",
+        "country" : "ZW",
+        "timezone" : "Africa/Harare",
+        "population" : 6349,
+        "location" : {
+                "latitude" : -16.77251,
+                "longitude" : 31.58381
+        }
+}
+
+> db.Cities.find({population: {$gt: 12985000}})
+{ "_id" : ObjectId("6284ca08694facf940641dda"), "name" : "Buenos Aires", "country" : "AR", "timezone" : "America/Argentina/Buenos_Aires", "population" : 13076300, "location" : { "latitude" : -34.61315, "longitude" : -58.37723 } }
+{ "_id" : ObjectId("6284ca09694facf9406441cb"), "name" : "Shanghai", "country" : "CN", "timezone" : "Asia/Shanghai", "population" : 14608512, "location" : { "longitude" : 31.22222, "latitude" : 121.45806 } }
+> db.Cities.find({population: {$gt: 12985000}}).pretty()
+{
+        "_id" : ObjectId("6284ca08694facf940641dda"),
+        "name" : "Buenos Aires",
+        "country" : "AR",
+        "timezone" : "America/Argentina/Buenos_Aires",
+        "population" : 13076300,
+        "location" : {
+                "latitude" : -34.61315,
+                "longitude" : -58.37723
+        }
+}
+{
+        "_id" : ObjectId("6284ca09694facf9406441cb"),
+        "name" : "Shanghai",
+        "country" : "CN",
+        "timezone" : "Asia/Shanghai",
+        "population" : 14608512,
+        "location" : {
+                "longitude" : 31.22222,
+                "latitude" : 121.45806
+        }
+}
+> db.Cities.find({"location.longitude": {$eq: -58.37723}}, {location:1, population:1}).pretty()
+{
+        "_id" : ObjectId("6284ca08694facf940641dda"),
+        "population" : 13076300,
+        "location" : {
+                "latitude" : -34.61315,
+                "longitude" : -58.37723
+        }
+}
+> db.Cities.updateMany({"location.latitude":73.2122 , country:"PK"},{$set:{population:55000}}).pretty()
+uncaught exception: TypeError: db.Cities.updateMany(...).pretty is not a function :
+@(shell):1:1
+> db.Cities.updateMany({"location.latitude":73.2122 , country:"PK"},{$set:{population:55000}});
+{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 0 }
+> db.Cities.deleteMany({timezone: "Asia/Karachi"}, {country: "PK"})
+{ "acknowledged" : true, "deletedCount" : 425 }
+> db.movies.find({"info.birthname":"Freeman, Crispin McDougal"})
+{ "_id" : ObjectId("6284c9cf694facf940641aed"), "person-name" : "Freeman, Crispin", "info" : { "quotes" : [ "On advice to aspiring voice-over actors: For myself, I'm in the favor of the more versatile kind of voice who can do all sorts of roles and transform. But to do that you have to have chops, and the best way to get them is through the classics, especially Shakespeare. It teaches you a lot about breathing, and idea and intention and rhythm. He's written the characters into the very poetry of the language, and if you try to get into and match his poetry it will take you out of your normal language patterns and that's the beginning of creating a character, not playing your mundane, everyday self. It's so verbally based, and in voice-acting, all you've got is your voice." ], "trivia" : [ "Said he was a little nervous about taking on the role of Zelgadis in Slayers because the character had already been voiced by someone else. When it came to reinterpretting the character, he said he thought that Zelgadis had more of an axe to grind.", "Fluent in English and Spanish.", "Is a big fan of authors 'William Shakespeare (I)' (qv), 'J.R.R. Tolkien' (qv), 'Joseph Campbell (III)' (qv), 'Marshall McLuhan' (qv), and 'William Gibson (II)' (qv).", "Is a big fan of anime creators 'Hayao Miyazaki' (qv) and 'Osamu Tezuka (I)' (qv).", "Frequently does voice overs for various union and non-union voice production companies for some video games and mostly animes.", "Has a younger brother, 'Clark Freeman' (qv), and a younger sister, 'Cassidy Freeman' (qv).", "Graduated from Williams College with a B.A. in theater & a minor in computer science", "Graduated from Columbia University with an M.F.A. in acting", "Is one of the only English-speaking voice actors to voice the same character of all Xenosaga video game series. Crispin was the only voice actor to provide the English voice of Albedo and Gaignun Kukai of the series.", "On August 11, 2007, he married 'Izobel Carol' (qv) on The Big Island of Hawaii.", "He and Veronica Taylor both came to the anime Slayers series as replacements - she replaced Joani Baker as Amelia and he replaced Daniel Cronin as Zelgadis." ], "minibiography" : [ "Crispin is the oldest of three. He has a younger brother, Clark, and youngest sister, Cassidy. All three attended the Latin School of Chicago, where Crispin graduated in a class of 60 in 1990. Crispin had a Mac in 1985. To this day he is still an avid computer geek. He played no official team sports in school, but participated in ad hoc football played in Lincoln Park. Crispin was an active participant in many school plays both on and behind stage. He's also a genuinely nice and humble person." ], "birthnotes" : [ "Chicago, Illinois, USA" ], "birthdate" : [ "9 February 1972" ], "height" : [ "6' 2" ], "spouse" : [ "'Izobel Carol' (qv) (11 August 2007 - present)" ], "birthname" : [ "Freeman, Crispin McDougal" ] } }
+> db.movies.find({"info.birthname":"Freeman, Crispin McDougal"}).pretty()
+{
+        "_id" : ObjectId("6284c9cf694facf940641aed"),
+        "person-name" : "Freeman, Crispin",
+        "info" : {
+                "quotes" : [
+                        "On advice to aspiring voice-over actors: For myself, I'm in the favor of the more versatile kind of voice who can do all sorts of roles and transform. But to do that you have to have chops, and the best way to get them is through the classics, especially Shakespeare. It teaches you a lot about breathing, and idea and intention and rhythm. He's written the characters into the very poetry of the language, and if you try to get into and match his poetry it will take you out of your normal language patterns and that's the beginning of creating a character, not playing your mundane, everyday self. It's so verbally based, and in voice-acting, all you've got is your voice."
+                ],
+                "trivia" : [
+                        "Said he was a little nervous about taking on the role of Zelgadis in Slayers because the character had already been voiced by someone else. When it came to reinterpretting the character, he said he thought that Zelgadis had more of an axe to grind.",
+                        "Fluent in English and Spanish.",
+                        "Is a big fan of authors 'William Shakespeare (I)' (qv), 'J.R.R. Tolkien' (qv), 'Joseph Campbell (III)' (qv), 'Marshall McLuhan' (qv), and 'William Gibson (II)' (qv).",
+                        "Is a big fan of anime creators 'Hayao Miyazaki' (qv) and 'Osamu Tezuka (I)' (qv).",
+                        "Frequently does voice overs for various union and non-union voice production companies for some video games and mostly animes.",
+                        "Has a younger brother, 'Clark Freeman' (qv), and a younger sister, 'Cassidy Freeman' (qv).",
+                        "Graduated from Williams College with a B.A. in theater & a minor in computer science",
+                        "Graduated from Columbia University with an M.F.A. in acting",
+                        "Is one of the only English-speaking voice actors to voice the same character of all Xenosaga video game series. Crispin was the only voice actor to provide the English voice of Albedo and Gaignun Kukai of the series.",
+                        "On August 11, 2007, he married 'Izobel Carol' (qv) on The Big Island of Hawaii.",
+                        "He and Veronica Taylor both came to the anime Slayers series as replacements - she replaced Joani Baker as Amelia and he replaced Daniel Cronin as Zelgadis."
+                ],
+                "minibiography" : [
+                        "Crispin is the oldest of three. He has a younger brother, Clark, and youngest sister, Cassidy. All three attended the Latin School of Chicago, where Crispin graduated in a class of 60 in 1990. Crispin had a Mac in 1985. To this day he is still an avid computer geek. He played no official team sports in school, but participated in ad hoc football played in Lincoln Park. Crispin was an active participant in many school plays both on and behind stage. He's also a genuinely nice and humble person."
+                ],
+                "birthnotes" : [
+                        "Chicago, Illinois, USA"
+                ],
+                "birthdate" : [
+                        "9 February 1972"
+                ],
+                "height" : [
+                        "6' 2"
+                ],
+                "spouse" : [
+                        "'Izobel Carol' (qv) (11 August 2007 - present)"
+                ],
+                "birthname" : [
+                        "Freeman, Crispin McDougal"
+                ]
+        }
+}
+>
+
